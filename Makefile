@@ -10,6 +10,7 @@ LOWDOWN_HTML_OPTIONS= \
 	-mcss="/style.css" \
 	-mphone="${PHONE}" \
 
+DOCS_DIR=docs
 NAV=nav.fragment
 HEADER=header.fragment
 RESUME_HEADER=resume.fragment
@@ -29,6 +30,9 @@ NOTES=$(patsubst notes/%.md,docs/notes/%.html,$(wildcard notes/*.md))
 
 all : $(PAGES) $(CV) $(POSTS) $(NOTES)
 
+$(DOCS_DIR):
+	mkdir -p $(@)
+
 docs/%.html : $(NAV) %.md $(FOOTER)
 	mkdir -p $(@D)
 	cat $^ | \
@@ -36,7 +40,7 @@ docs/%.html : $(NAV) %.md $(FOOTER)
 		lowdown $(LOWDOWN_HTML_OPTIONS) -mtitle="davidjenei - $*" > $@
 
 $(INDEX) : TITLE="about"
-$(INDEX) : $(NAV) $(HEADER) index.md $(FOOTER)
+$(INDEX) : $(NAV) $(HEADER) index.md $(FOOTER) | $(DOCS_DIR)
 $(RESUME) : TITLE="resume"
 $(RESUME) : $(NAV) $(HEADER) resume.md $(FOOTER)
 
@@ -54,12 +58,12 @@ $(RESUME_PRIVATE):
 		sed 's/%phone/${PHONE}/g' | \
 		lowdown $(LOWDOWN_HTML_OPTIONS) -mcss="style.css" -mtitle="$(TITLE)" -o $@
 
-# TODO: Generate pdf
+# TODO: Generate pdf. For now I'll just upload here the manually exported pdf.
 $(CV) : davidjenei.pdf
 	cp $< $@
 
 clean:
-	- rm $(PAGES) $(CV) $(POSTS) $(NOTES) $(RSS)
+	- rm $(PAGES) $(CV) $(POSTS) $(NOTES)
 
 publish: all
 	rsync --rsh='ssh -p30509' -avzh docs/ $(CSS) profile.jpg davidjenei.com:~/static
