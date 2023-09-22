@@ -1,0 +1,11 @@
+<div id="header">
+<div id="column">
+<h1 id="name">Dávid Jenei</h1>
+<p>Embedded Software Engineer</p>
+<p>Budapest, HU • <a href="mailto:info@davidjenei.com">info@davidjenei.com</a> • <a href="https://davidjenei.com">davidjenei.com</a> • <a href="tel:%phone">%phone</a> </div>
+<div id="image">
+<img src="./profile.jpg" alt="profile" />
+</div>
+</div>
+
+
