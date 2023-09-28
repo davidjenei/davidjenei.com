@@ -1,14 +1,13 @@
-# Python
+Python
+======
 
-## Useful links
-
--   [My favourite cheatsheet]
-
-## Zen
+Zen
+---
 
     >>> import this
 
-## [Stop writing classes]
+[Stop writing classes]
+----------------------
 
 1.  if your class has two methods and one is `__init__`, it is probably
     not a class
@@ -20,20 +19,32 @@
 5.  if your subclass only implements `__init__`, you probably don't need
     a new class
 
-## Working backwards
+Working backwards
+-----------------
 
-Imagine what the user will type when uses your code. Than implement
+Imagine what the user will type when uses your code. Then implement
 that.
 
-## Scripts inside modules
+[Scripts inside modules]
+------------------------
 
 > I'm -1 on this and on any other proposed twiddlings of the **main**
 > machinery. The only use case seems to be running scripts that happen
 > to be living inside a module's directory, which I've always seen as an
 > antipattern. To make me change my mind you'd have to convince me that
-> it isn't. - [Source]
+> it isn't.
 
-## Snippets from [Effective Python: 59 ways..]
+[For Python packages, file structure != API]
+--------------------------------------------
+
+    # tekst/__init__.py
+
+    __all__ = ['Token', 'tokenize', ...]
+
+    from .tokenizer import Token, tokenize
+
+Snippets from [Effective Python: 59 ways..]
+-------------------------------------------
 
 **Meta classes**
 
@@ -56,22 +67,26 @@ Call a function automatically in a class definition:
 > class for each column in the database table. To do this, here I define
 > a descriptor class to connect attributes to column names.
 
-## Monkey patching
+Monkey patching
+---------------
 
 > guerrilla patch, which referred to changing code sneakily – and
 > possibly incompatibly with other such patches – at runtime.
 
-## Nice projects
+Nice projects
+-------------
 
 -   [Tornado]
 
-## Packaging
+Packaging
+---------
 
 Pip, wheel?
 
 [RPM + Python]
 
-## Python and C
+Python and C
+------------
 
 Cython, SWIG, pybind11?
 
@@ -82,9 +97,9 @@ Cython, SWIG, pybind11?
 >
 > [gyrovagueGeist]
 
-  [My favourite cheatsheet]: https://referenceguide.dev/cheatsheet/python3.html
   [Stop writing classes]: https://www.youtube.com/watch?v=o9pEzgHorH0&feature=youtu.be
-  [Source]: https://mail.python.org/pipermail/python-3000/2007-April/006793.html
+  [Scripts inside modules]: https://mail.python.org/pipermail/python-3000/2007-April/006793.html
+  [For Python packages, file structure != API]: https://benhoyt.com/writings/python-api-file-structure/
   [Effective Python: 59 ways..]: https://www.goodreads.com/en/book/show/23020812
   [Tornado]: https://github.com/tornadoweb/tornado
   [RPM + Python]: https://grimoire.carcano.ch/blog/packaging-a-python-wheel-as-rpm/

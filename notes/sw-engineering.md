@@ -310,7 +310,7 @@ real world software engineering is just one adaptation.
 
 Ultimately it's your application/system/product that needs to work.
 
-  [How to build good software]: https://www.csc.gov.sg/articles/how-to-build-good-software
+  [How to build good software]: https://medium.com/open-government-products/how-to-build-good-software-b13b32cb53a3
   [Things you should never do]: https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/
   [No Silver Bullet]: https://blog.acolyer.org/2016/09/06/no-silver-bullet-essence-and-accident-in-software-engineering/
   [The Architecture of Open Source Applications]: http://aosabook.org/en/index.html

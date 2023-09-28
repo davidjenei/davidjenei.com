@@ -1,7 +1,9 @@
 Notes
 =====
 
-🌱 Welcome to my [digital garden](https://github.com/MaggieAppleton/digital-gardeners)/public notebook. Here I share ideas, code snippets and links that I find useful. It's also a way for me to learn in public.
+🌱 Welcome to my [digital garden](https://github.com/MaggieAppleton/digital-gardeners)/public notebook 🌱.
+
+Here I share ideas, code snippets and links that I find useful. It's also a way for me to learn in public.
 
 Please keep in mind, that I write these for myself, so you may find some
 notes confusing and things may be incorrect.
@@ -93,10 +95,12 @@ Misc
 - [Personal bio](./notes/bio.md)
 - [Writing](./notes/writing.md)
 - [Visual](./notes/visual.md)
+- [Economics](./notes/economics.md)
 - [Parenting](./notes/parenting.md)
 - [Tips to make employees feel appreciated](./notes/employee-appreciation.md)
 - [Useful phrases for workplace meetings](./notes/meeting-phrases.md)
 - [Uses](./notes/uses.md)
+- [Motivation, goals](./notes/motivation.md)
 - [News, information, attention](./notes/attention.md)
 - [Electrical installation](./notes/electrician.md)
 

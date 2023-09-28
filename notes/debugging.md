@@ -1,6 +1,8 @@
-# Debugging
+Debugging
+=========
 
-## When we have source code
+When we have source code
+------------------------
 
 Fire up a debugger:
 
@@ -14,10 +16,16 @@ Or start tracing:
 
 -   print debug messages
 
-How to decide which one to use? Debugging stops the execution, printing can only slow the
-execution down. Is that a problem? [See RTT]
+How to decide which one to use? Debugging stops the execution, printing
+can only slow the execution down. Is that a problem? [See RTT]
 
-## We don't have source code: go ask the OS
+We don't have source code: go ask the OS
+----------------------------------------
+
+What is an operation system?
+
+> The Unix kernel is a traffic cop that mediates different demands for
+> time, memory, disks, and so on. - Unix Power Tools
 
 -   strace - [What problems do people solve with strace], don't forget
     to filter with `-e`
@@ -31,11 +39,13 @@ execution down. Is that a problem? [See RTT]
 -   lsof - file descriptor leak
 -   `LD_PRELOAD`
 
-## We don't have source code, look at the binary
+We don't have source code, look at the binary
+---------------------------------------------
 
 -   readelf
 
-## When we debug the OS
+When we debug the OS
+--------------------
 
 Add some prints:
 
@@ -53,7 +63,33 @@ The `/sys`:
 -   get some device info
 -   control devices - pwm
 
-Attach debugger:
+GDB
+---
+
+**Race condition**:
+
+Try compiling with `tsan`.
+
+Reproduce the bug:
+
+    while :; do ./testsuite "Race condition" && sleep $((RANDOM % 1)) || break; done
+
+Now in GDB:
+
+    gdb --args ./testsuite "Race condition"
+
+Run forever:
+
+    set pagination off
+    break exit
+    commands
+    run
+    end
+
+Coredump
+--------
+
+Check if systemd coredump collection is enabled.
 
   [GDB Tutorial]: https://developers.redhat.com/blog/2021/04/30/the-gdb-developers-gnu-debugger-tutorial-part-1-getting-started-with-the-debugger#why_another_gdb_tutorial_
   [See RTT]: https://www.segger.com/products/debug-probes/j-link/technology/about-real-time-transfer/

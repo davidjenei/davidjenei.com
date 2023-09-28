@@ -12,7 +12,7 @@ What is a requirement?
 > is unambiguous, testable, or measurable and necessary for product or
 > process acceptability.
 
-ok IEEE.
+ok IEEE, thank you.
 
 > Code captures the development team's [collective understanding] on how
 > to build something
@@ -28,6 +28,11 @@ Why do we need requirements?
 -   make the system testable
 -   spare development cost
 -   describe the system in legally binding documents
+
+[Elicitation]
+-------------
+
+Requirements are not collected but mined.
 
 Glossary
 --------
@@ -115,5 +120,6 @@ Hypertext is underrated!
   [Requirements engineering]: https://www.iem.fraunhofer.de/en/research/range-of-services/software-engineering-and-it-security/RequirementsEngineering.html
   [requirement]: https://standards.ieee.org/ieee/1220/3372/
   [collective understanding]: https://www.csc.gov.sg/articles/how-to-build-good-software
+  [Elicitation]: https://en.m.wikipedia.org/wiki/Requirements_elicitation
   [Architecturally significant requirements (ASR)]: https://en.wikipedia.org/wiki/Architecturally_significant_requirements
   [Readme driven development]: https://tom.preston-werner.com/2010/08/23/readme-driven-development.html

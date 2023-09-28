@@ -58,7 +58,7 @@ $(RESUME_PRIVATE):
 		sed 's/%phone/${PHONE}/g' | \
 		lowdown $(LOWDOWN_HTML_OPTIONS) -mcss="style.css" -mtitle="$(TITLE)" -o $@
 
-# TODO: Generate pdf. For now I'll just upload here the manually exported pdf.
+# TODO: Generate pdf. For now I'll just upload here the manually exported file.
 $(CV) : davidjenei.pdf
 	cp $< $@
 
