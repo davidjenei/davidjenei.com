@@ -12,11 +12,11 @@ LOWDOWN_HTML_OPTIONS= \
 	-mdate="${DATE_STR}"
 
 DOCS_DIR=docs
-NAV=nav.fragment
-HEADER=header.fragment
-RESUME_HEADER=resume.fragment
-FOOTER=footer.fragment
-DATE=date.fragment
+NAV=fragments/nav.fragment
+HEADER=fragments/header.fragment
+RESUME_HEADER=fragments/resume.fragment
+FOOTER=fragments/footer.fragment
+DATE=fragments/date.fragment
 DATE_STR != date "+%B %d, %Y"
 
 INDEX=docs/index.html
@@ -50,8 +50,8 @@ $(INDEX) $(RESUME) :
 		lowdown $(LOWDOWN_HTML_OPTIONS) -mtitle="davidjenei - $(TITLE)" -o $@
 
 $(RESUME_PRIVATE) : TITLE=David Jenei resume
-$(RESUME_PRIVATE) : resume-private.fragment resume.md
-$(RESUME_PDF) : resume-public.fragment resume.md
+$(RESUME_PRIVATE) : fragments/resume-private.fragment resume.md
+$(RESUME_PDF) : fragments/resume-public.fragment resume.md
 
 $(RESUME_PRIVATE):
 	cat $^ | \
