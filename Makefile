@@ -11,7 +11,7 @@ LOWDOWN_HTML_OPTIONS= \
 	-mphone="${PHONE}" \
 	-mdate="${DATE_STR}"
 
-DOCS_DIR=docs
+DOCS_DIR=docs/notes docs/blog
 NAV=fragments/nav.fragment
 HEADER=fragments/header.fragment
 RESUME_HEADER=fragments/resume.fragment
@@ -74,6 +74,7 @@ help:
 	@echo "  Options:"
 	@echo "    > PHONE Set phone number for resume"
 	@echo "Targets:"
+	@echo "  all: Build /notes, /blog and the index pages"
 	@echo "  publish: Upload html docs to the server"
 	@echo "  $(RESUME_PRIVATE): Build resume with phone number"
 	@echo "  $(RESUME_PDF): Build resume without phone number"
