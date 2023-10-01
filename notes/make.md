@@ -1,7 +1,8 @@
 Make
 ====
 
-> **Go to**: [Links](#Links) | [Response to Make critics](#Response to Make critics)
+> **Go to:** [Links] · [My C++ Makefile project] · [Response to Make
+critics] · [Alternatives] · [CMake] · [Autotools]
 
 Links
 -----
@@ -115,6 +116,8 @@ Autotools
 
 [Autotools.info]
 
+  [Make]: #make
+  [Links]: #links
   [My C++ Makefile project]: #my-c-makefile-project
   [Response to Make critics]: #response-to-make-critics
   [Alternatives]: #alternatives

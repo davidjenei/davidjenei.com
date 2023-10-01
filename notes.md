@@ -50,6 +50,7 @@ Embedded
 - [Telematic gateway market](./notes/telematic-gw.md)
 - [IEC 62443 Cybersecurity in automation and control systems](./notes/iec-62443.md)
 - [Edge](./notes/edge.md)
+- [Operating systems](./notes/os.md)
 
 Linux
 -----
@@ -126,6 +127,7 @@ Personal
 - [🎭 Plays I've seen](./notes/szinhaz.md)
 - [🎶 Concerts I've attended and liked](./notes/concerts.md)
 - [🏠 Remodel](./notes/remodel.md)
+- [Movie watchlist](./notes/movies.md)
 
 
 

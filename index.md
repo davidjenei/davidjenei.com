@@ -29,6 +29,6 @@ PGP: [90347603]
   [simple]: http://www.catb.org/~esr/writings/taoup/html/ch01s07.html
   [Technology Radar]: ./radar.html
   [250kB club]: https://250kb.club/davidjenei-com/
-  [<info@davidjenei.com>]: mailto:hello@davidjenei.com
+  [<info@davidjenei.com>]: mailto:info@davidjenei.com
   [\~davidjenei]: https://github.com/davidjenei/
   [90347603]: http://pgp.mit.edu/pks/lookup?op=get&search=0x26C53F3E90347603

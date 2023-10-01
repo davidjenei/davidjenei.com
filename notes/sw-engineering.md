@@ -1,21 +1,32 @@
 Software engineering
 ====================
 
-Why is software engineering so difficult? Is it even engineering?
+> **Go to:** [Sources] · [Communication] · [Testing and prototyping] ·
+> [Known unknowns and unknown unknowns] · [Complexity] · [Productivity]
+> · [Top-down or bottom-up?] · [Why software is easy to sell?] · [Does
+> anything work?] · [Iterative and incremental] · [Architecture] ·
+> [Minimalism in software engineering] · [Faulty reward functions] ·
+> [Choose boring technology] · [Selecting dependencies is art] ·
+> [Characteristics] · [Your Coding Philosophies are Irrelevant] ·
+> [Second-system effect]
 
-Must-read classics
-------------------
+> **Last updated:** [%date]
 
-* [How to build good software]
-* [Things you should never do]
-* [No Silver Bullet]
-* [The Architecture of Open Source Applications]
-* [Real software engineering]
+What makes software engineering hard? Is it even engineering?
+
+Sources
+-------
+
+-   [How to build good software]
+-   [Things you should never do]
+-   [No Silver Bullet]
+-   [The Architecture of Open Source Applications]
+-   [Real software engineering]
 
 Communication
 -------------
 
-> essential difficulty: invisibility
+> Essential difficulty: invisibility
 
 We speak human language to communicate ideas. Machines understand code.
 There is a gap between the two.
@@ -33,7 +44,7 @@ Sometimes pictures can help in presenting ideas. But software
 Testing and prototyping
 -----------------------
 
-> essential difficulty: conformity and scope
+> Essential difficulty: conformity and scope
 
 It is import to understand the problem before writing code. But how well
 do we understand the requirement?
@@ -52,7 +63,7 @@ is a service industry?)
 Known unknowns and unknown unknowns
 -----------------------------------
 
-> essential difficulty: changeability
+> Essential difficulty: changeability
 
 How do we know that a software product is complete?
 
@@ -73,7 +84,7 @@ unexpected.
 Complexity
 ----------
 
-> essential difficulty: complexity
+> Essential difficulty: complexity
 
 What is software complexity? How can we measure that?
 
@@ -255,8 +266,8 @@ versioning.
 Try to recognise seemingly faulty reward functions: increasing
 complexity. Recommended literature: [What did AUTOSAR do?]
 
-[Choose boring technology]
---------------------------
+[Choose boring technology][1]
+-----------------------------
 
 > Let’s say every company gets about three innovation tokens. You can
 > spend these however you want, but the supply is fixed for a long
@@ -276,8 +287,8 @@ But at the same time:
 > Find the dependencies — and eliminate them. - [In defense of not
 > invented here syndrome]
 
-Characteristics of Software engineering
----------------------------------------
+Characteristics
+---------------
 
 From [We are not special]
 
@@ -305,11 +316,42 @@ The [Rational design process] is a
 [caricature][Real software engineering] for all engineering disciplines,
 real world software engineering is just one adaptation.
 
-[Your Coding Philosophies are Irrelevant]
------------------------------------------
+Second-system effect
+--------------------
+
+> The first time you use a new technology or build a new type of system,
+> you know that you're a beginner, so you tend to be naturally
+> conservative. The second time around, you have experience. You know
+> what you're doing. You have success under your belt, so you pull out
+> all the stops and do all the things you are afraid to do the first
+> time around. If your project is the second system for most of your
+> designers, then it will probably fail outright. If it doesn't fail, it
+> will be bloated, inefficient, and icky. - [c3 wiki]
+
+[Your Coding Philosophies are Irrelevant][2]
+--------------------------------------------
 
 Ultimately it's your application/system/product that needs to work.
 
+  [Software engineering]: #software-engineering
+  [Sources]: #sources
+  [Communication]: #communication
+  [Testing and prototyping]: #testing-and-prototyping
+  [Known unknowns and unknown unknowns]: #known-unknowns-and-unknown-unknowns
+  [Complexity]: #complexity
+  [Productivity]: #productivity
+  [Top-down or bottom-up?]: #top-down-or-bottom-up
+  [Why software is easy to sell?]: #why-software-is-easy-to-sell
+  [Does anything work?]: #does-anything-work
+  [Iterative and incremental]: #iterative-and-incremental
+  [Architecture]: #architecture
+  [Minimalism in software engineering]: #minimalism-in-software-engineering
+  [Faulty reward functions]: #faulty-reward-functions
+  [Choose boring technology]: #choose-boring-technology
+  [Selecting dependencies is art]: #selecting-dependencies-is-art
+  [Characteristics]: #characteristics
+  [Second-system effect]: #second-system-effect
+  [Your Coding Philosophies are Irrelevant]: #your-coding-philosophies-are-irrelevant
   [How to build good software]: https://medium.com/open-government-products/how-to-build-good-software-b13b32cb53a3
   [Things you should never do]: https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/
   [No Silver Bullet]: https://blog.acolyer.org/2016/09/06/no-silver-bullet-essence-and-accident-in-software-engineering/
@@ -331,8 +373,9 @@ Ultimately it's your application/system/product that needs to work.
   [Source]: https://blog.vivekhaldar.com/post/10669678292/size-is-the-best-predictor-of-code-quality
   [misspecified the reward functions]: https://openai.com/blog/faulty-reward-functions/
   [What did AUTOSAR do?]: https://www.reddit.com/r/embedded/comments/leq366/how_much_of_a_modern_carbuilt_from_the_year_2000/gmiq6d0/
-  [Choose boring technology]: https://mcfunley.com/choose-boring-technology
+  [1]: https://mcfunley.com/choose-boring-technology
   [In defense of not invented here syndrome]: https://www.joelonsoftware.com/2001/10/14/in-defense-of-not-invented-here-syndrome/
   [We are not special]: https://www.hillelwayne.com/post/we-are-not-special/
   [Rational design process]: https://users.ece.utexas.edu/~perry/education/SE-Intro/fakeit.pdf
-  [Your Coding Philosophies are Irrelevant]: https://prog21.dadgum.com/142.html
+  [c3 wiki]: https://wiki.c2.com/?SecondSystemEffect
+  [2]: https://prog21.dadgum.com/142.html

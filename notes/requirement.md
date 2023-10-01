@@ -1,11 +1,18 @@
 Requirements engineering
 ========================
 
-> [Requirements engineering] refers to engineered, systematic gathering,
-> documentation, testing and managing of requirements.
+> **Go to:** [Definition] · [Why do we need requirements?] ·
+> [Elicitation] · [Glossary] · [Background information] · [What makes a
+> good requirement?] · [What are the types of requirements?] · [How
+> detailed?] · [Format]
 
-What is a requirement?
-----------------------
+> **Last updated:** [%date]
+
+Definition
+----------
+
+> [Requirements engineering][1] refers to engineered, systematic
+> gathering, documentation, testing and managing of requirements.
 
 > A [requirement] is a statement that identifies a product or processes
 > operational, functional, or design characteristic or constraint, which
@@ -14,11 +21,11 @@ What is a requirement?
 
 ok IEEE, thank you.
 
-> Code captures the development team's [collective understanding] on how
-> to build something
+> ... (software) is living manifestation of the development team’s
+> collective understanding - [How to build good software]
 
 Requirements capture the team's understanding of what the system should
-do.
+do, code captures how it should be built.
 
 Why do we need requirements?
 ----------------------------
@@ -29,8 +36,8 @@ Why do we need requirements?
 -   spare development cost
 -   describe the system in legally binding documents
 
-[Elicitation]
--------------
+[Elicitation][2]
+----------------
 
 Requirements are not collected but mined.
 
@@ -57,6 +64,8 @@ question:
 
 -   Why are we doing this?
 -   How can we measure success?
+
+Goals should be written down and agreed on, just like requirements.
 
 **Goals vs requirements**
 
@@ -117,9 +126,19 @@ Format
 
 Hypertext is underrated!
 
-  [Requirements engineering]: https://www.iem.fraunhofer.de/en/research/range-of-services/software-engineering-and-it-security/RequirementsEngineering.html
+  [Requirements engineering]: #requirements-engineering
+  [Definition]: #definition
+  [Why do we need requirements?]: #why-do-we-need-requirements
+  [Elicitation]: #elicitation
+  [Glossary]: #glossary
+  [Background information]: #background-information
+  [What makes a good requirement?]: #what-makes-a-good-requirement
+  [What are the types of requirements?]: #what-are-the-types-of-requirements
+  [How detailed?]: #how-detailed
+  [Format]: #format
+  [1]: https://www.iem.fraunhofer.de/en/research/range-of-services/software-engineering-and-it-security/RequirementsEngineering.html
   [requirement]: https://standards.ieee.org/ieee/1220/3372/
-  [collective understanding]: https://www.csc.gov.sg/articles/how-to-build-good-software
-  [Elicitation]: https://en.m.wikipedia.org/wiki/Requirements_elicitation
+  [How to build good software]: https://medium.com/open-government-products/how-to-build-good-software-b13b32cb53a3
+  [2]: https://en.m.wikipedia.org/wiki/Requirements_elicitation
   [Architecturally significant requirements (ASR)]: https://en.wikipedia.org/wiki/Architecturally_significant_requirements
   [Readme driven development]: https://tom.preston-werner.com/2010/08/23/readme-driven-development.html

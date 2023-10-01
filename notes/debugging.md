@@ -86,8 +86,24 @@ Run forever:
     run
     end
 
+**Recover lost PC**:
+
+Try recovering program counter from $lr.
+
+```
+Thread 1 "testsuite_pvxs" received signal SIGSEGV, Segmentation fault.
+0x0000ffffec001600 in ?? ()                                                                                                
+(gdb) bt
+#0  0x0000ffffec001600 in ?? ()
+#1  0x0000ffffffffedd0 in ?? ()
+Backtrace stopped: not enough registers or memory available to unwind further
+(gdb) set $pc = $lr
+(gdb) up 2
+#2  0x0000fffff7f554c8 in non-virtual thunk to pvxs::client::SubscriptionImpl::cancel() () from /usr/lib64/libpvxs.so.1.0  
+```
+
 Coredump
---------
+-------
 
 Check if systemd coredump collection is enabled.
 

@@ -1,7 +1,8 @@
 <div id="header">
 <div id="column">
 <h1 id="name">Dávid Jenei</h1>
-<p>Budapest, HU • <a href="mailto:info@davidjenei.com">info@davidjenei.com</a> </div>
+Budapest, HU • <a href="mailto:info@davidjenei.com">info@davidjenei.com</a>
+</div>
 <div id="image">
 <img src="./profile.jpg" alt="profile" />
 </div>

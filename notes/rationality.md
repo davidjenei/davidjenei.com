@@ -1,8 +1,19 @@
-# Rationality
+Rationality
+===========
 
-[<https://www.lesswrong.com>]
+> **Go to:** [Links] · [Falsification] · [Pure science] · [Linguistics]
 
-## [Falsification ratio]
+Links
+-----
+
+-   [lesswrong.com]
+-   [Luke on the arrogance of science]
+-   [Wronger than wrong]
+
+Falsification
+-------------
+
+[Falsification ratio]
 
 Time you spend with falsifying ideas:
 
@@ -14,14 +25,30 @@ Time you spend with falsifying ideas:
 > tend to identify a solution and then play it shortly after without
 > trying their hardest to falsify it first.
 
-## [FAM: Az objektív igazság határa és az akarat bölcselete]
+Pure science
+------------
 
-## [Cognitive Linguistics lectures from Thomas Hoffmann]
+[FAM: Az objektív igazság határa és az akarat bölcselete]
 
-[Wronger than wrong]
+The moment you start using human language, words and phrases you exit
+the realm of pure science.
 
-  [<https://www.lesswrong.com>]: https://www.lesswrong.com
+[Fragility of physics]
+
+Linguistics
+-----------
+
+[Cognitive Linguistics lectures from Thomas Hoffmann]
+
+  [Rationality]: #rationality
+  [Links]: #links
+  [Falsification]: #falsification
+  [Pure science]: #pure-science
+  [Linguistics]: #linguistics
+  [lesswrong.com]: https://www.lesswrong.com
+  [Luke on the arrogance of science]: https://lukesmith.xyz/articles/science-vs-soyence/
+  [Wronger than wrong]: https://en.wikipedia.org/wiki/Wronger_than_wrong
   [Falsification ratio]: https://nabeelqu.substack.com/p/notes-on-puzzles
   [FAM: Az objektív igazság határa és az akarat bölcselete]: https://www.youtube.com/live/m9WdGE4fHQw?feature=share&t=1373
+  [Fragility of physics]: https://lukesmith.xyz/articles/the-fragility-of-physics/
   [Cognitive Linguistics lectures from Thomas Hoffmann]: https://www.youtube.com/watch?v=nhnT1CxMSSY&list=PLnWwkfEFUccgXKsSjhsyWeZn3UMDKldRv
-  [Wronger than wrong]: https://en.wikipedia.org/wiki/Wronger_than_wrong
