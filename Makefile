@@ -9,6 +9,7 @@ LOWDOWN_HTML_OPTIONS= \
 	--html-no-num-ent \
 	-mcss="/style.css" \
 	-mphone="${PHONE}" \
+	-mdate="${DATE_STR}"
 
 DOCS_DIR=docs
 NAV=nav.fragment
@@ -16,7 +17,7 @@ HEADER=header.fragment
 RESUME_HEADER=resume.fragment
 FOOTER=footer.fragment
 DATE=date.fragment
-DATE_STR != date "+%d %B %Y"
+DATE_STR != date "+%B %d, %Y"
 
 INDEX=docs/index.html
 RESUME=docs/resume.html
@@ -34,7 +35,6 @@ $(DOCS_DIR):
 	mkdir -p $(@)
 
 docs/%.html : $(NAV) %.md $(FOOTER)
-	mkdir -p $(@D)
 	cat $^ | \
 		sed 's/\.md/.html/g' | \
 		lowdown $(LOWDOWN_HTML_OPTIONS) -mtitle="davidjenei - $*" > $@
@@ -69,4 +69,13 @@ publish: all
 	rsync --rsh='ssh -p30509' -avzh docs/ $(CSS) profile.jpg davidjenei.com:~/static
 
 .PHONY: all clean publish
+
+help:
+	@echo "usage: make [OPTIONS] <target>"
+	@echo "  Options:"
+	@echo "    > PHONE Set phone number for resume"
+	@echo "Targets:"
+	@echo "  publish: Upload html docs to the server"
+	@echo "  $(RESUME_PRIVATE): Build resume with phone number"
+	@echo "  $(RESUME_PDF): Build resume without phone number"
 
