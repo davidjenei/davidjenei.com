@@ -16,7 +16,6 @@ NAV=fragments/nav.fragment
 HEADER=fragments/header.fragment
 RESUME_HEADER=fragments/resume.fragment
 FOOTER=fragments/footer.fragment
-DATE=fragments/date.fragment
 DATE_STR != date "+%B %d, %Y"
 
 INDEX=docs/index.html
