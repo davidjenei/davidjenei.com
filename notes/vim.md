@@ -1,58 +1,111 @@
-# VIM shortcuts
+Vim quick start
+===============
 
-Shortcuts I look up once in every month:
+> **Go to:** [Why you should consider using Vim?] · [Navigation] ·
+> [Reading terminal output] · [Working with multiple files] · [Single
+> repeats] · [Compare upstream and edited version of file in split] ·
+> [Macro] · [.vimrc]
 
--   `gd` - jump to variable declaration
--   `%` - jump to the matching brace, or #if to #endif
--   `[{` - jump to start or end of function
--   `dt"` - delete till character "
--   `^R ^W` - word under cursor into cmdline
--   `zm` - fold more
--   `zr` - fold reduce
--   `zR` - open all
--   `q` - quote(?) record a macro to a given register, replay with @
+Why you should consider using Vim?
+----------------------------------
 
-## Demo ideas
+Normally nobody cares about the tools you use for development. I don't
+either, but for some reason you are here, so I present you this list:
 
--   using `^[` for ASCII escape
--   `.` command examples
--   reload a file that was edited outside of vim
--   redirect command output to vim, sort, grep, cut columns, etc
--   compare upstream and edited version of a file in split
+-   lightweight and fast
+-   privacy: reports no "telemetry data"
+-   universal: can be found in every UNIX-like system
+-   open source: not just open core, it's actually usable without big
+    tech
+-   terminal workflow: use tools that are not integrated to your IDE,
+    but available in the OS
+-   for the curious: what gives me this warning?
+-   minimalist
 
-## Never set `$TERM`
+If you care about the things above, Vim might be for you.
 
-Why? Just don't. Leave it up to the terminal emulator.
+Now some opinion: Most of the fancy stuff in IDEs is done by language
+servers. Autocomplete is overrated, it's the automations that will save
+you time.
 
-## My case against Visual Studio Code
+Here is a good [article] on the history of Vim.
 
-I want to understand the tools I use. Why am I getting this warning for
-line 5? How can I add a new rule to my linter? How can I further
-automate this build step?
+Navigation
+----------
 
-I want to use only what I really need. Before that, I need to know what
-I need. So always try IDEs and look for inspiration.
+The excellent `vimtutor` can teach you how to navigate within a file,
+switch modes and do some basic editing tasks.
 
-I'd rather stick with vendor neutral tools. Also I'd rather work on IDE
-independent software projects.
+My favourites:
 
-## Some thoughts on IDEs
+-   Join lines
+-   Open a new line and enter insert mode
+-   Find closing braces
+-   Fold reduce, fold more, fold reduce all
+-   Delete till character
+-   Change word
+-   Jump to matching brace (`%`), start/end of function (`[`,`{`)
 
--   Most of the stuff is done by language servers.
--   Autocomplete is not the primary feature of an IDE. It's the
-    automations.
--   vscode is at 75% market share (???) in 2022. Impressive.
+Reading terminal output
+-----------------------
 
-## My .vimrc
+    ls -ail | vim -
 
-I try to live without plugins, but here are my essentials:
+Now check how we can use the `%` command-line range specifier.
 
--   base16-colors
--   lsp
--   slime - send cells to ipython
--   buftabline - I don't use tablines so let's just display the buffers
+    :help :%
+
+You can also use Linux commands to modify buffer content.
+
+    sort; grep; cut
+
+> Don't forget to `trim` before `cut`!
+
+Now insert the date in the current line.
+
+    :help :.
+
+Working with multiple files
+---------------------------
+
+Do some buffer magic here: `bn, bp, ls, bd`
+
+Single repeats
+--------------
+
+Simple changes can be repeated with the `.` command.
+
+Compare upstream and edited version of file in split
+----------------------------------------------------
+
+Then reload file that was edited outside of vim
+
+Macro
+-----
+
+`q` as in quote?
+
+My .vimrc
+------
+
+I try to live without plugins, but:
+
+-   base16-colors - match colors with my terminal color scheme
+-   buftabline - I don’t use tablines so let’s just display the buffers
     there.
+-   vim-lsp
+-   tagbar
+-   ctrl-p
 
-# [VI history]
+Happy editing!
 
-  [VI history]: https://pikuma.com/blog/origins-of-vim-text-editor
+  [Vim quick start]: #vim-quick-start
+  [Why you should consider using Vim?]: #why-you-should-consider-using-vim
+  [Navigation]: #navigation
+  [Reading terminal output]: #reading-terminal-output
+  [Working with multiple files]: #working-with-multiple-files
+  [Single repeats]: #single-repeats
+  [Compare upstream and edited version of file in split]: #compare-upstream-and-edited-version-of-file-in-split
+  [Macro]: #macro
+  [.vimrc]: #vimrc
+  [article]: https://pikuma.com/blog/origins-of-vim-text-editor

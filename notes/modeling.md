@@ -13,14 +13,13 @@ through a great number of abstractions.
 > Text is an ideal medium for abstract logic. - [Maggie Appleton]
 
 Mainstream programming languages operate with a textual content format.
-There is a gap between code and pictures, because visuals are also
-abstractions.
 
 > This level of abstraction removes the physical, spatial, and embodied
 > qualities that humans rely upon to understand the world around us. -
 > [Maggie Appleton]
 
-The benefits of the textual format still outweighs the cons.
+The benefits of text format still outweighs the cons. There is a
+gap between code and pictures, because visuals are also abstractions.
 
 > There is a reason why digital circuit design has shifted to use of
 > HDLs - HN
