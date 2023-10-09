@@ -14,7 +14,7 @@ Operator names
 Standards, coding styles and guidelines
 ---------------------------------------
 
-**Standards** introduce a subset of the language in order to:
+**Korte** introduce a subset of the language in order to:
 
 -   avoid bugs
 -   increase portability
@@ -188,6 +188,16 @@ Command line argumens
 Under \*nix type systems with exec() calls, `argv[0]` will be whatever
 the caller puts into the argv0 spot in the `exec()` call.
 
+  [Reading notes for the book *Effective C*]: #reading-notes-for-the-book-effective-c
+  [Operator names]: #operator-names
+  [Standards, coding styles and guidelines]: #standards-coding-styles-and-guidelines
+  [Terminology]: #terminology
+  [Misc]: #misc
+  [Types]: #types
+  [Constants]: #constants
+  [Implicit conversions]: #implicit-conversions
+  [Assignment]: #assignment
+  [Command line argumens]: #command-line-argumens
   [MISRA]: https://gitlab.com/MISRA/MISRA-C/MISRA-C-2012/Example-Suite
   [NASA JPL]: https://github.com/stanislaw/awesome-safety-critical/blob/master/Backup/JPL_Coding_Standard_C.pdf
   [SEI CERT]: https://wiki.sei.cmu.edu/confluence/display/c/SEI+CERT+C+Coding+Standard

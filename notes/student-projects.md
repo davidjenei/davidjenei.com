@@ -1,3 +1,6 @@
+Student project ideas
+=====================
+
 Secure boot technológiák vizsgálata, és szoftverintegritás biztosítása beágyazott Linux rendszereken
 ----------------------------------------------------------------------------------------------------
 
@@ -21,18 +24,18 @@ akár önmaguk ellenőrzésére (dm-verity).
 
 Feladat:
 
-- Ismerkedjen meg a következő technológiákkal és komponensekkel: u-boot
-  FIT image / kernel aláírás és verifikáció / kernel titkosítás Linux dm
-  alrendszer, ezen belül a dm-verity háttértárellenőrző layer Freescale
-  code signing tools i.MX6 rendszereken
-- Valósítsa meg a kód dekriptálását validációját
-- Integrálja az evopro build rendszerébe
+-   Ismerkedjen meg a következő technológiákkal és komponensekkel:
+    u-boot FIT image / kernel aláírás és verifikáció / kernel titkosítás
+    Linux dm alrendszer, ezen belül a dm-verity háttértárellenőrző layer
+    Freescale code signing tools i.MX6 rendszereken
+-   Valósítsa meg a kód dekriptálását validációját
+-   Integrálja az evopro build rendszerébe
 
 Kapcsolódó készségek és ismeretek:
 
-- Szoftverfejlesztés C és C++ nyelven
-- Linux ismeretek
-- Valós-idejű szoftverfejlesztés
+-   Szoftverfejlesztés C és C++ nyelven
+-   Linux ismeretek
+-   Valós-idejű szoftverfejlesztés
 
 [link]
 
@@ -107,9 +110,9 @@ beágyazott rendszerekben - (open standard isa, open source hardware)
 Yocto BSP layer készítése i.MX6 alapú hardver családhoz
 -------------------------------------------------------
 
-A Yocto projekt az egyik legelterjedtebb keretrendszer beágyazott Linux
-disztribúciók összeállításához és fordításához. Ma már számos félvezető
-és SBC gyártó kizárólag Yocto-hoz illeszkedő konfigurációs csomagokban
+a yocto projekt az egyik legelterjedtebb keretrendszer beágyazott linux
+disztribúciók összeállításához és fordításához. ma már számos félvezető
+és sbc gyártó kizárólag yocto-hoz illeszkedő konfigurációs csomagokban
 (layer-ekben) biztosít hivatalos szoftvertámogatást a termékeihez. A
 hallgató feladata, hogy az Evopro Innovation egy egyedi tervezésű, NXP
 i.MX6 processzor alapú, beágyazott számítógépéhez készítsen Yocto
@@ -179,47 +182,90 @@ A legnagyobb felhő szolgáltatók saját rendszerei (AWS IoT Greengrass,
 Azure IoT Edge) kompakt megoldást kínálnak ezek építésére. A hallgató
 feladata:
 
-- AWS IoT Greengrass és Azure IoT Edge szolgáltatások megismerése és
-  összehasonlítása
-- K3s Lightweight Kubernetes megismerése
-- NXP i.MX6 alapú fejlesztőkártya csatlakoztatása ezekhez a
-  rendszerekhez
-- Működés bemutatása egy példaalkalmazás segítségével
+-   AWS IoT Greengrass és Azure IoT Edge szolgáltatások megismerése és
+    összehasonlítása
+-   K3s Lightweight Kubernetes megismerése
+-   NXP i.MX6 alapú fejlesztőkártya csatlakoztatása ezekhez a
+    rendszerekhez
+-   Működés bemutatása egy példaalkalmazás segítségével
 
 Elsajátítható készségek és ismeretek:
 
-- Beágyazott Linux ismeretek
-- Linux container ismeretek
-- Szoftverfejlesztés C és Python nyelven
+-   Beágyazott Linux ismeretek
+-   Linux container ismeretek
+-   Szoftverfejlesztés C és Python nyelven
 
 [Link][2]
 
 2022 Title ideas
 ----------------
 
-- RISC-V processzor alkalmazása Linux alapú beágyazott rendszerekben
+-   RISC-V processzor alkalmazása Linux alapú beágyazott rendszerekben
 
 > open standard isa, open source hardware
 
-- ARM Ethos neurális gyorsító vizsgálata gépi látás alkalmazásokban
+-   ARM Ethos neurális gyorsító vizsgálata gépi látás alkalmazásokban
 
 > nxp imx9
 
-- Hardver integrált security megoldások vizsgálata ARM processzorokon
+-   Hardver integrált security megoldások vizsgálata ARM processzorokon
 
 > eitg, nxp secure enclave, arm trustzone
 
-- Távoli firmware frissítés megvalósítása nyílt forráskódú Linux
-  rendszerekben
+-   Távoli firmware frissítés megvalósítása nyílt forráskódú Linux
+    rendszerekben
 
 > on-prem firmware update, open source
 
-- Debian alapú beágyazott Linux fordítása és BSP integrálás ELBE
-  keretrendszerrel
+-   Debian alapú beágyazott Linux fordítása és BSP integrálás ELBE
+    keretrendszerrel
 
 > debian package feed based embedded systems, security, firmware update,
 > edge
 
+Debian alapú beágyazott Linux fordítása és BSP integrálás ELBE keretrendszerrel
+-------------------------------------------------------------------------------
+
+Napjainkban több nyílt forráskódú keretrendszert is használhatunk saját
+Linux disztribúció készítésére. Ezek közül a legismertebb a Yocto és a
+Buildroot, viszont mindkettő esetében saját magunknak kell gondoskodunk
+az összes felhasznált szoftver csomag fordításáról vagy
+keresztfordításáról. Ebből következően minden csomag esetleges
+biztonsági frissítése is a fejlesztő feladata, ami sok üzemeltetési
+munkát jelent. Erre nyújt megoldást az ELBE keretrendszer ahol
+publikusan elérhető más disztribúciók (Debian, Ubuntu) által használt
+csomagokat újrahasználhatunk és azok segítségével készíthetünk egyedi
+beágyazott Linux rendszert. A hallgató feladata, hogy készítsen az
+Evopro Innovation egy egyedi tervezésű ARM alapú beágyazott
+számítógépéhez egy Debian alapú Linux disztribúciót ELBE keretrendszer
+segítségével.
+
+-   Ismerkedjen meg a következő technológiákkal és komponensekkel: ELBE,
+    Debian package feed, .deb packaging
+-   Készítsen bootolható lemezképet egy ARM alapú számítógéphez
+
+Kapcsolódó készségek és ismeretek:
+
+-   Szoftverfejlesztés C és C++ nyelven
+-   Linux ismeretek
+
+  [Student project ideas]: #student-project-ideas
+  [Secure boot technológiák vizsgálata, és szoftverintegritás biztosítása beágyazott Linux rendszereken]:
+    #secure-boot-technológiák-vizsgálata-és-szoftverintegritás-biztosítása-beágyazott-linux-rendszereken
+  [Secure OS és secure storage technológiák vizsgálata és implementációja ARM processzoron]:
+    #secure-os-és-secure-storage-technológiák-vizsgálata-és-implementációja-arm-processzoron
+  [Távoli diagnosztikai alkalmazás fejlesztése i.MX6 alapú hardver családhoz]:
+    #távoli-diagnosztikai-alkalmazás-fejlesztése-imx6-alapú-hardver-családhoz
+  [Kamera illesztése i.MX6 alapú hardver családhoz]: #kamera-illesztése-imx6-alapú-hardver-családhoz
+  [Yocto BSP layer készítése i.MX6 alapú hardver családhoz]: #yocto-bsp-layer-készítése-imx6-alapú-hardver-családhoz
+  [Azure IoT Edge alkalmazás készítése i.MX6 alapú beágyazott számítógépre]:
+    #azure-iot-edge-alkalmazás-készítése-imx6-alapú-beágyazott-számítógépre
+  [Gépi látás és deep learning alkalmazása gyártási folyamat minőségellenőrzésére]:
+    #gépi-látás-és-deep-learning-alkalmazása-gyártási-folyamat-minőségellenőrzésére
+  [Intelligens IoT peremhálózat kiépítése felhő alapokon]: #intelligens-iot-peremhálózat-kiépítése-felhő-alapokon
+  [2022 Title ideas]: #2022-title-ideas
+  [Debian alapú beágyazott Linux fordítása és BSP integrálás ELBE keretrendszerrel]:
+    #debian-alapú-beágyazott-linux-fordítása-és-bsp-integrálás-elbe-keretrendszerrel
   [link]: http://www.mit.bme.hu/oktatas/temakiirasok/2016/secure-boot-technologiak-vizsgalata-es-szoftverintegritas-biztositasa
   [1]: http://www.mit.bme.hu/oktatas/temakiirasok/2016/secure-os-es-secure-storage-technologiak-vizsgalata-es-implementacioja-arm
   [2]: http://www.mit.bme.hu/oktatas/temakiirasok/2019/intelligens-iot-peremhalozat-kiepitese-felho-alapokon-evopro

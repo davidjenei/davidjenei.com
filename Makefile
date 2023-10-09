@@ -28,8 +28,6 @@ PAGES=$(INDEX) $(RESUME) $(RESUME_PRIVATE) $(RESUME_PDF) docs/blog.html docs/rad
 POSTS=$(patsubst blog/%.md,docs/blog/%.html,$(wildcard blog/*.md))
 NOTES=$(patsubst notes/%.md,docs/notes/%.html,$(wildcard notes/*.md))
 
-all : $(PAGES) $(CV) $(POSTS) $(NOTES)
-
 $(DOCS_DIR):
 	mkdir -p $(@)
 
@@ -61,14 +59,15 @@ $(RESUME_PRIVATE):
 $(CV) : davidjenei.pdf
 	cp $< $@
 
+.PHONY: clean
 clean:
 	- rm $(PAGES) $(CV) $(POSTS) $(NOTES)
 
+.PHONY: publish
 publish: all
-	rsync --rsh='ssh -p30509' -avzh docs/ $(CSS) profile.jpg davidjenei.com:~/static
+	rsync -avzh docs/ $(CSS) profile.jpg davidjenei.com:~/static
 
-.PHONY: all clean publish
-
+.PHONY: help
 help:
 	@echo "usage: make [OPTIONS] <target>"
 	@echo "  Options:"
@@ -79,3 +78,5 @@ help:
 	@echo "  $(RESUME_PRIVATE): Build resume with phone number"
 	@echo "  $(RESUME_PDF): Build resume without phone number"
 
+.PHONY: all
+all : $(PAGES) $(CV) $(POSTS) $(NOTES)

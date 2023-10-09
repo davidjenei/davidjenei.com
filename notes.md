@@ -20,7 +20,7 @@ Programming
 - [**Make**](./notes/make.md)
 - [Reading notes for **Effective C**](./notes/c-notes.md)
 - [Reading notes for **A tour of C++**](./notes/cpp-notes.md)
-- [**VIM** shortcuts](./notes/vim.md)
+- [**Vim**](./notes/vim.md)
 - [**Git**, commit guideline, branching models](./notes/git.md)
 - [Testing, code quality and clean code](./notes/testing.md)
 - [Configuration files](./notes/config.md)

@@ -16,7 +16,7 @@ Our limited attention span
 
 > [pay attention]
 
-Manage attention
+Managing attention
 ================
 
 What can we do?
