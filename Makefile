@@ -12,12 +12,12 @@ RESUME_PUBLIC=docs/resume-public.html
 HTMLS=$(INDEX) $(RESUME) $(RESUME_PRIVATE) $(RESUME_PUBLIC) \
 	docs/blog.html docs/radar.html docs/notes.html docs/tags.html
 
-POST_HTML=$(patsubst blog/%.md,docs/blog/%.html,$(wildcard blog/*.md))
-NOTES_HTML=$(patsubst notes/%.md,docs/notes/%.html,$(wildcard notes/*.md))
-TAG_HTML=$(patsubst tags/%.md,docs/tags/%.html,$(wildcard tags/*.md))
+POST_HTMLS=$(patsubst blog/%.md,docs/blog/%.html,$(wildcard blog/*.md))
+NOTES_HTMLS=$(patsubst notes/%.md,docs/notes/%.html,$(wildcard notes/*.md))
+TAG_HTMLS=$(patsubst tags/%.md,docs/tags/%.html,$(wildcard tags/*.md))
 
 .PHONY: all
-all : $(HTMLS) $(POST_HTML) $(NOTES_HTML) $(TAG_HTML)
+all : $(HTMLS) $(POST_HTMLS) $(NOTES_HTMLS) $(TAG_HTMLS)
 
 #################################################################################
 # MARKDOWN TO HTML
@@ -31,9 +31,11 @@ LOWDOWN_ARGS= -Thtml \
 	--html-no-num-ent \
         -mdate="${DATE_STR}"
 
-docs/%.pre: %.md | $(DOC_DIRS)
-	cat $< | sed 's/\.md/.html/g' | lowdown -o $@ $(LOWDOWN_ARGS)
+docs/%.pre: %.md | docs
+	@cat $< | sed 's/\.md/.html/g' | lowdown -o $@ $(LOWDOWN_ARGS)
 
+docs:
+	@mkdir -p $(DOC_DIRS)
 #################################################################################
 # BUILD TAGS
 #################################################################################
@@ -84,15 +86,15 @@ BODY=fragments/body.fragment
 HTML_END=fragments/html-end.fragment
 
 define html_envelope
-	TITLE="$(shell grep -oP '^title:\s*\K.*' $(1)) - $(SITE)" envsubst < $(HTML) > $@
-	cat $2 | envsubst '$$PHONE' >> $@
-	cat $(HTML_END) >> $@
+	@TITLE="$(shell grep -oP '^title:\s*\K.*' $(1)) - $(SITE)" envsubst < $(HTML) > $@
+	@cat $2 | envsubst '$$PHONE' >> $@
+	@cat $(HTML_END) >> $@
 endef
 
 DOC_DIRS=docs/tags docs/notes docs/blog
 
 $(DOC_DIRS):
-	@mkdir -p $@
+	mkdir -p $@
 
 docs/notes.html: docs/notes.pre docs/tags.pre
 	$(call html_envelope, notes.md, fragments/body-tags.fragment $(NAV) $^ $(FOOTER))
@@ -118,11 +120,11 @@ docs/%.html: docs/%.pre $(HTML) $(NAV) $(FOOTER) $(HTML_END)
 
 .PHONY: clean
 clean:
-	- rm $(HTMLS) $(POST_HTML) $(NOTES_HTML) $(TAG_HTML)
+	- @rm $(HTMLS) $(POST_HTMLS) $(NOTES_HTMLS) $(TAG_HTMLS)
 
 .PHONY: publish
 publish: all
-	rsync -avzh docs/ style.css profile.jpg davidjenei.com:~/static
+	rsync -avzh docs/ style.css profile.jpg $(SITE):~/static
 
 .PHONY: help
 help:

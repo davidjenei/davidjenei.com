@@ -1,3 +1,5 @@
+title: David Jenei's resume
+
 SUMMARY
 -------
 
