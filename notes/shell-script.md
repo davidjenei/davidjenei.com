@@ -1,3 +1,5 @@
+tags: #linux #terminal
+
 Shell script
 ============
 

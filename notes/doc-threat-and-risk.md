@@ -1,3 +1,5 @@
+tags: #documentation #cybersec
+
 Threat analysis
 ========================
 

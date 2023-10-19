@@ -1,3 +1,5 @@
+tags: #writing
+
 # Writing
 
 [Write like you talk]

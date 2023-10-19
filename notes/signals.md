@@ -1,3 +1,5 @@
+tags: #linux #terminal
+
 Terminal control characters and signals
 =======================================
 

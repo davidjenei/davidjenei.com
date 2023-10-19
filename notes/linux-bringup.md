@@ -1,3 +1,5 @@
+tags: #linux
+
 Device tree, device bring up
 ============================
 

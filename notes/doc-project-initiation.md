@@ -1,3 +1,5 @@
+tags: #documentation
+
 Project initiation document
 ===========================
 

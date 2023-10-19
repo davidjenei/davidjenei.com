@@ -1,3 +1,5 @@
+tags: #embedded
+
 Notes on LPWA network and development boards
 ============================================
 

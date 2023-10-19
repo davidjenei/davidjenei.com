@@ -1,3 +1,5 @@
+tags: #student
+
 Szempontok a szakdolgozat-bírálat elkészítéséhez
 ================================================
 

@@ -1,3 +1,7 @@
+tags: #tech
+title: Uses
+description: Hardware I use for work and hobby
+
 Uses
 ====
 

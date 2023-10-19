@@ -1,3 +1,5 @@
+tags: #sw #productivity
+
 Vim quick start
 ===============
 
@@ -119,6 +121,11 @@ GDB???
 Yes pls.
 
     Termdebug
+
+Quickfix
+--
+
+    :e $VIMRUNTIME/compiler/<Tab>
 
 My [.vimrc][1]
 --------------

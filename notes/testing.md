@@ -1,3 +1,5 @@
+tags: #sw #testing
+
 # Testing
 
 ## Terminology

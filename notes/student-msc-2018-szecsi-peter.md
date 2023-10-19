@@ -1,3 +1,5 @@
+tags: #student
+
 Biztonságos autóipari átjáró fejlesztése
 ========================================
 

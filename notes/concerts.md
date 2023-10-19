@@ -1,3 +1,5 @@
+tags: #fun
+
 # 🎶 Concerts I've attended and liked
 
 ## Wishlist

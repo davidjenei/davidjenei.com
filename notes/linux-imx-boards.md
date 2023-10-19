@@ -1,3 +1,5 @@
+tags: #embedded #imx
+
 i.MX board manufactureres
 ==
 

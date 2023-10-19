@@ -1,3 +1,5 @@
+tags: #embedded #os
+
 [RTOS basics]
 =============
 

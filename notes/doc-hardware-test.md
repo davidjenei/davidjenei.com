@@ -1,3 +1,5 @@
+tags: #documentation
+
 Hardware test report
 ====================
 

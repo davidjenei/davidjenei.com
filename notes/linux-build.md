@@ -1,3 +1,5 @@
+tags: #linux #embedded #build
+
 Embedded Linux build systems
 ============================
 

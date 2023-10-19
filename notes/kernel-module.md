@@ -1,3 +1,5 @@
+tags: #linux #kernel
+
 Kernel module development notes
 ===============================
 

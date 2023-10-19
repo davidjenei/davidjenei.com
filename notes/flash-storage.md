@@ -1,3 +1,5 @@
+tags: #embedded
+
 eMMC vs SD
 ==========
 

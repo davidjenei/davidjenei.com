@@ -1,3 +1,5 @@
+tags: #student
+
 Wolf Ádám „ Okos kaptár tervezése és megvalósítása ” című szakdolgozatának bírálata
 ===================================================================================
 

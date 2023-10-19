@@ -1,3 +1,5 @@
+tags: #azure #server
+
 # az-220
 
 ## Implement the IoT solution infrastructure

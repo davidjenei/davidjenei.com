@@ -1,3 +1,5 @@
+tags: #sw #python
+
 Python
 ======
 

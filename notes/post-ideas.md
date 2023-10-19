@@ -1,8 +1,10 @@
-Post ideas
-===============
+tags: #writing
 
-How I built this webpage using markdown and make
-------------------------------------------------
+Post ideas
+==========
+
+Colophon
+--------
 
 -   discovering small web
 -   organising thoughts and ideas is satisfying
@@ -15,7 +17,7 @@ How I built this webpage using markdown and make
 -   buy vps, deploy nginx
 -   write notes on phone?
 -   generate pdf resume from html
--   markdown [presentations](https://github.com/davidjenei/slides) using pandoc and beamer
+-   markdown [presentations] using pandoc and beamer
 
 Repurpose old ebook reader as home automation dashboard
 -------------------------------------------------------
@@ -47,4 +49,10 @@ My remotely accessible linux development board setup
 -   attach hw interfaces to the container
 -   remote jlink
 
+  [Post ideas]: #post-ideas
+  [Colophon]: #colophon
+  [Repurpose old ebook reader as home automation dashboard]: #repurpose-old-ebook-reader-as-home-automation-dashboard
+  [Learn Linux networking by building your own router]: #learn-linux-networking-by-building-your-own-router
+  [My remotely accessible linux development board setup]: #my-remotely-accessible-linux-development-board-setup
+  [presentations]: https://github.com/davidjenei/slides
   [tileboard]: https://github.com/resoai/TileBoard

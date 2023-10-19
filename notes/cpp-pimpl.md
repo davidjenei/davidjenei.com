@@ -1,3 +1,5 @@
+tags: #cpp
+
 Pointer to implementation pattern
 =================================
 

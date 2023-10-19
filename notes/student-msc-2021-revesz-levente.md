@@ -1,3 +1,5 @@
+tags: #student
+
 Neurális hálók futtatásának hardveres gyorsítása beágyazott környezetben
 ========================================================================
 

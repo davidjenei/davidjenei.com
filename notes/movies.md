@@ -1,3 +1,5 @@
+tags: #fun
+
 # 🇭🇺
 
 * Szirmok, virágok, koszorúk

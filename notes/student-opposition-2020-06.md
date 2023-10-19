@@ -1,3 +1,5 @@
+tags: #student
+
 VARGA TAMÁS "LINUX PORTOLÁSA ZYNQ 7000 SOC-RE" CÍMŰ DIPLOMATERVÉNEK A BÍRÁLATA
 ==============================================================================
 

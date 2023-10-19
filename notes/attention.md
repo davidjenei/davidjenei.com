@@ -1,3 +1,7 @@
+tags: #attention
+description: Tips on how to survive in the attention economy
+title: Attention
+
 Our limited attention span
 ==========================
 
@@ -11,13 +15,13 @@ Our limited attention span
 >
 > -   [Herbert A. Simon]
 
-[Attention is a currency]
-=========================
+[Attention is a currency][1]
+============================
 
 > [pay attention]
 
 Managing attention
-================
+==================
 
 What can we do?
 
@@ -43,7 +47,20 @@ Not only it consumes our capacity to think, but it takes time.
 Managing your attention helps avoiding others tricking you and wasting
 your time.
 
+Curation
+========
+
+> Curation is the art of selection. It’s the filtering through the vast
+> expanse of information we are exposed to, choosing what deserves our
+> attention. - [Jorge Medina]
+
+  [Our limited attention span]: #our-limited-attention-span
+  [Attention is a currency]: #attention-is-a-currency
+  [Managing attention]: #managing-attention
+  [Why?]: #why
+  [Curation]: #curation
   [Herbert A. Simon]: https://www.goodreads.com/quotes/8502027-in-an-information-rich-world-the-wealth-of-information-means-a
-  [Attention is a currency]: https://www.wired.com/1997/12/es-attention/
+  [1]: https://www.wired.com/1997/12/es-attention/
   [pay attention]: https://english.stackexchange.com/questions/388584/what-is-the-origin-of-the-phrase-pay-attention
   [Life is short - Paul Graham]: http://www.paulgraham.com/vb.html
+  [Jorge Medina]: https://newsletter.thejorgemedina.com/p/youre-not-lacking-creativity-youre

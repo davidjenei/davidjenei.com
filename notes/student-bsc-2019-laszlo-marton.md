@@ -1,3 +1,5 @@
+tags: #student
+
 Beágyazott alkalmazások telepítése és üzemeltetése Linux alapú peremhálózatokban
 ================================================================================
 

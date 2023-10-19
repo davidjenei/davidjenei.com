@@ -1,3 +1,6 @@
+tags: #embedded #automotive
+description: Telematic gateway market research
+
 Gateway
 =======
 

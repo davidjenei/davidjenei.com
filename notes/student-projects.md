@@ -1,3 +1,5 @@
+tags: #student
+
 Student project ideas
 =====================
 

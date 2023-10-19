@@ -1,3 +1,5 @@
+tags: #sw #cpp
+
 Reading notes for *A Tour of C++*
 =================================
 

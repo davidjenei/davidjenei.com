@@ -1,3 +1,6 @@
+tags: #linux #automotive
+description: CAN networking in Linux
+
 Controller Area Network
 =======================
 

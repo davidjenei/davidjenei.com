@@ -1,3 +1,5 @@
+tags: #student
+
 Czurkó Dániel “Objektumok felismerése és követése felhőből vezérelt drónokkal” című szakdolgozatának bírálata
 =============================================================================================================
 

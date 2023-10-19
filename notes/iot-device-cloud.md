@@ -1,3 +1,5 @@
+tags: #embedded #iot
+
 Device-cloud communication models
 =================================
 

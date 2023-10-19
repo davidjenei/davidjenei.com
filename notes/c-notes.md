@@ -1,3 +1,5 @@
+tags: #sw #c #book
+
 Reading notes for the book *Effective C*
 ========================================
 

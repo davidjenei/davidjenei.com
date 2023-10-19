@@ -1,3 +1,5 @@
+tags: #student
+
 Konténer-alapú grafikus alkalmazások futtatása beágyazott környezetben
 ======================================================================
 

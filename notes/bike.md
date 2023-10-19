@@ -1,3 +1,6 @@
+tags: #fun
+title: Bike building
+
 Bike
 ====
 

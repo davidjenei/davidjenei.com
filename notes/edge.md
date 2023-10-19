@@ -1,3 +1,5 @@
+tags: #embedded #iot
+
 Edge, far-edge
 ==============
 

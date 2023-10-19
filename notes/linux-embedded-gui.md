@@ -1,3 +1,5 @@
+tags: #embedded #ui
+
 GUI on embedded Linux
 ===
 

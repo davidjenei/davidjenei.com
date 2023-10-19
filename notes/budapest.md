@@ -1,3 +1,5 @@
+tags: #fun
+
 Places to visit in Budapest
 ===========================
 

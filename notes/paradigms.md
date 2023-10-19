@@ -1,3 +1,5 @@
+tags: #sw
+
 Algorithmic paradigms and design patterns
 =========================================
 

@@ -1,3 +1,5 @@
+tags: #sw #book
+
 # Reading notes for ["A Philosophy of Software Design" from John Ousterhout]
 
 Why is it important to make software less complicated?
