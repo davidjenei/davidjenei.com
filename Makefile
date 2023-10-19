@@ -1,6 +1,9 @@
-# *Dependencies*
-# sudo apt install lowdown
-#
+SITE=davidjenei.com
+
+#################################################################################
+# HTML PAGES
+#################################################################################
+
 INDEX=docs/index.html
 RESUME=docs/resume.html
 RESUME_PRIVATE=docs/resume-private.html
@@ -32,7 +35,7 @@ docs/%.pre: %.md | $(DOC_DIRS)
 	cat $< | sed 's/\.md/.html/g' | lowdown -o $@ $(LOWDOWN_ARGS)
 
 #################################################################################
-# TAGS
+# BUILD TAGS
 #################################################################################
 
 NOTES=$(wildcard notes/*.md)
@@ -70,7 +73,7 @@ tags.md: $(NOTES)
 gen-tags: tags.md $(patsubst %,tags/tag_%.md,$(TAGS))
 
 #################################################################################
-# HTML
+# BUILD HTML
 #################################################################################
 
 HTML=fragments/html.fragment
@@ -81,7 +84,7 @@ BODY=fragments/body.fragment
 HTML_END=fragments/html-end.fragment
 
 define html_envelope
-	TITLE="$(shell grep -oP '^title:\s*\K.*' $(1)) - davidjenei.com" envsubst < $(HTML) > $@
+	TITLE="$(shell grep -oP '^title:\s*\K.*' $(1)) - $(SITE)" envsubst < $(HTML) > $@
 	cat $2 | envsubst '$$PHONE' >> $@
 	cat $(HTML_END) >> $@
 endef
