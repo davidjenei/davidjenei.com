@@ -1,4 +1,5 @@
-tags: #sw #cpp
+tags: #cpp #book
+title: A Tour of C++
 
 Reading notes for *A Tour of C++*
 =================================

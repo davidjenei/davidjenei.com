@@ -1,4 +1,6 @@
 tags: #sw #teamwork
+title: Development methodologies
+description: Agile, scrum and words that managers use
 
 Development methodologies
 =========================

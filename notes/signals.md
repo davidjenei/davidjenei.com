@@ -1,4 +1,6 @@
 tags: #linux #terminal
+title: Control characters and signals
+description: CTRL
 
 Terminal control characters and signals
 =======================================

@@ -1,7 +1,9 @@
-tags: #sw #teamwork
+tags: #teamwork
+title: Git guideline
+description: May apply to other version control systems too
 
-Contribution guidelines
-=======================
+Git guideline
+=============
 
 Write meaningful commit messages
 --------------------------------
@@ -52,9 +54,10 @@ Prepare changes in a new branch
 
 Branch name format:
 
-reason\_\_details--tag
+    reason__details--tag
 
-feature/fix/enhancement/refactor/upgrade etc.
+
+Reasons are feature/fix/enhancement/refactor/upgrade etc.
 
 *enchance*: intensify, increase, or further improve the quality, value,
 or extent of, to raise to a higher degree
@@ -64,7 +67,7 @@ or extent of, to raise to a higher degree
 
 Example:
 
-feature\_\_wonderful-hallo-API
+    feature__wonderful-hallo-API
 
 [More info]
 
@@ -78,16 +81,18 @@ Commands I like
 Branching models
 ----------------
 
-> Any organization that designs a system (defined broadly) will produce
-> a design whose structure is a copy of the organization's communication
-> structure. — Melvin E. Conway
-
 **[Trunk based development]** with git
 
 -   root level branches, no access control
 -   need quick local builds
 -   immediate reviews
 
+  [Git guideline]: #git-guideline
+  [Write meaningful commit messages]: #write-meaningful-commit-messages
+  [Useful verbs for commit messages]: #useful-verbs-for-commit-messages
+  [Prepare changes in a new branch]: #prepare-changes-in-a-new-branch
+  [Commands I like]: #commands-i-like
+  [Branching models]: #branching-models
   [Writing Git commit messages]: http://365git.tumblr.com/post/3308646748/writing-git-commit-messages
   [Writing Good Commit messages]: https://vip.wordpress.com/documentation/commit-messages/
   [5 useful tips..]: https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message

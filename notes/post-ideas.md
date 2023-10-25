@@ -1,4 +1,5 @@
 tags: #writing
+title: Post ideas
 
 Post ideas
 ==========

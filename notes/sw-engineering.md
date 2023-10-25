@@ -1,5 +1,6 @@
 title: Software engineering
 tags: #sw #communication
+description: What makes software engineering challenging?
 
 Software engineering
 ====================

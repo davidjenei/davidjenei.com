@@ -1,4 +1,4 @@
-tags: #sw #cpp
+tags: #cpp
 
 Type erasure
 ============

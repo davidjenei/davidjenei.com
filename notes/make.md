@@ -1,4 +1,6 @@
 tags: #sw #build
+title: Make
+description: Building software
 
 Make
 ====

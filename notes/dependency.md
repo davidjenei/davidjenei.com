@@ -1,4 +1,6 @@
-tags: #sw
+tags: #sw #dependency
+title: Dependency management
+description: Eliminate them
 
 Dependencies and package managers
 =================================

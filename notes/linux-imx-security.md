@@ -70,6 +70,8 @@ How to automate:
 
 Patch code signing tool and load DEK key from custom path:
 
+> Who wrote this? ...
+
     diff --git a/cst-2.3.2/code/back_end/src/adapt_layer_openssl.c b/cst-2.3.2/code/back_end/src/adapt_layer_openssl.c
     index c0ed926..ba9a1f8 100755
     --- a/cst-2.3.2/code/back_end/src/adapt_layer_openssl.c

@@ -1,4 +1,4 @@
-tags: #sw #ai
+tags: #ai
 title: AI alignment
 description: Some links on AI alignment
 

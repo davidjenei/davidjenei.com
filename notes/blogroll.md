@@ -1,4 +1,5 @@
-tags: #writing
+tags: #indieweb
+title: Blogroll
 
 Blogroll
 ========

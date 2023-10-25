@@ -1,10 +1,10 @@
 tags: #teamwork #book
-description: "Thanks for the feedback"
+title: Thanks for the feedback
+description: How to not turn feedback into evaluation
 
 [Thanks for the feedback]
 =========================
 
-- how to not turn feedback into evaluation
 - positive feedback makes people uncomfortable
 - negative feedback makes people defensive
 

@@ -1,4 +1,5 @@
-tags: #sw #productivity
+tags: #productivity #training
+description: Propaganda
 
 Vim quick start
 ===============

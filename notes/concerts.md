@@ -4,16 +4,20 @@ tags: #fun
 
 ## Wishlist
 
-* Tesseract
-* Periphery (re)
 * Benny Greb
+* Dream Theater w/ M.P
+
+## 2024
+
+* Tesseract 02.04 - Budapest
+* Periphery 01.27 - Milan
+* Pineapple Thief ???
 
 ## 2023
 
-* Animals as Leaders - Hamburg (cancelled?)
-* Polyphia (soon)
-* Plini - Budapest (soon)
-* Jakub Zytecki - Budapest (soon)
+* Plini - Budapest
+* Jakub Zytecki - Budapest
+* Jakub Zytecki 11.04 - Budapest
 
 ## 2022
 

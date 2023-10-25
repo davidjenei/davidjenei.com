@@ -1,6 +1,6 @@
 title: Is ChatGPT really intelligent
 tags: #ai
-description: Check this episode from Philosophize This!
+description: An episode from Philosophize This!
 
 [Is ChatGPT really intelligent][1]
 ==================================

@@ -53,18 +53,17 @@ tags/tag_%.md: $(NOTES) | tags
 	@echo "# Notes about #$*" > $@
 	@echo >> $@
 	@for file in $$(grep -l "^tags:.*#$*\b" notes/*.md); do			\
-		echo -n "* [" >> $@; 						\
-		echo -n $$(grep -oP "^title: \K.*" $${file} || echo $${file}) >> $@;	\
-		echo "](../$${file})" >> $@; 					\
+		printf "* [%s](../$${file})\n"					\
+			"$$(grep -oP "^title: \K.*" $${file} || echo $${file})" >> $@; \
 		echo >> $@; 							\
-		echo -n "    > " >> $@; 					\
-		grep -oP "^description: \K.*" $${file} >> $@ || echo >> $@;	\
-		echo -n "    > - ">> $@;  					\
-		cat $${file} | wc -w | tr -d '\n' >> $@;			\
-		echo " words" >> $@;						\
+		printf "\t *%s - %s words*\n"					\
+			"$$(grep -oP "^description: \K.*" $${file} || echo "_")"\
+			"$$(cat $${file} | wc -w)" >> $@ ;			\
+		echo >> $@;							\
     	done
 
 tags.md: $(NOTES)
+	@echo "Building tags.md..."
 	@echo > $@
 	@$(foreach tag,$(TAGS), 	\
 		echo -n "* [$(tag)](tags/tag_$(tag).md)\t" >> $@; \
@@ -86,7 +85,7 @@ BODY=fragments/body.fragment
 HTML_END=fragments/html-end.fragment
 
 define html_envelope
-	@TITLE="$(shell grep -oP '^title:\s*\K.*' $(1)) - $(SITE)" envsubst < $(HTML) > $@
+	@TITLE="$(shell grep -oP '^title:\s*\K.*' $(1) 2>/dev/null) - $(SITE)" envsubst < $(HTML) > $@
 	@cat $2 | envsubst '$$PHONE' >> $@
 	@cat $(HTML_END) >> $@
 endef
@@ -124,7 +123,7 @@ clean:
 
 .PHONY: publish
 publish: all
-	rsync -avzh docs/ style.css profile.jpg $(SITE):~/static
+	rsync -azh docs/ style.css profile.jpg $(SITE):~/static
 
 .PHONY: help
 help:

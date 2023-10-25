@@ -1,4 +1,6 @@
 tags: #sw #configuration
+title: Configuration management
+description: Config files, arguments, environment variables
 
 Configuration management
 ========================

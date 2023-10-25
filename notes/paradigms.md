@@ -1,4 +1,6 @@
 tags: #sw
+title: Paradigms
+description: Links to wiki.c2.com
 
 Algorithmic paradigms and design patterns
 =========================================

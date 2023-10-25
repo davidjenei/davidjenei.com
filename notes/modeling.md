@@ -1,4 +1,6 @@
 tags: #sw #modeling
+title: Modeling
+description: business-logic.jpg
 
 System and software modeling
 ============================

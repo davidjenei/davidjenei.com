@@ -1,4 +1,4 @@
-tags: #sw
+tags: #rust
 
 Rust
 ====

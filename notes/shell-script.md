@@ -1,4 +1,6 @@
 tags: #linux #terminal
+title: Shell scripts
+description: I found these useful at some point
 
 Shell script
 ============
@@ -9,33 +11,6 @@ Some links
 * http://shellhaters.org/
 * https://www.usenix.org/sites/default/files/conference/protected-files/lisa19_maheshwari.pdf
 * https://github.com/jlevy/the-art-of-command-line
-
-Set
---
-
-Export variables automatically:
-
-```
-set -a
-source .env
-set +a
-```
-
-Fail pipe:
-
-```
-set -o pipefail
-```
-
-Heredocs
----
-
-```
-cat << EOF > file.txt
-The current working directory is: $PWD
-You are logged in as: $(whoami)
-EOF
-```
 
 Daemon
 ------

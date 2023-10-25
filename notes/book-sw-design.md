@@ -1,4 +1,6 @@
 tags: #sw #book
+title: A Philosophy of Software Design
+description: Dealing with complexity
 
 # Reading notes for ["A Philosophy of Software Design" from John Ousterhout]
 

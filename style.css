@@ -14,14 +14,11 @@ blockquote { font-style: italic; margin: 1rem 1rem 0 1rem; padding-left: 1.5rem;
 p { margin: 1.5rem 0;}
 footer { margin: 4rem 0;}
 img[alt=profile] { width: 12rem; border-radius: 50%; }
-.tags ul { list-style-type: none; columns: 2; }
+.tags ul { list-style-type: none; columns: 2 }
 .tag ul { list-style-type: none;}
-.tag li a {display: inline-block }
-.tag li p {margin: 0.5rem 0}
-.tag li {margin-bottom: 2rem; margin-left: 0}
-.tag p:last-child {font-size: 1.5rem; margin: 0}
+.tag li { margin-bottom: 2rem; margin-left: 0 }
+.tag li p { margin: 0 }
 #header { line-height: 1.3; display: flex; justify-content: space-between; flex-direction: column-reverse;}
 @media (min-width: 640px) { body { width: 72ch; } #header { flex-direction: row } .tags ul {columns:3}}
 @media (min-width: 2000px) { body { width: 85ch; }}
-@page { margin: .75in }
 @media print { nav { display: none } footer { display: none } #header { flex-direction: row } html { font-size: 39.5% } body { background-color: transparent; line-height: 1.3 } li {margin-bottom: 0.2em } p { margin: 4px 0; } img[alt=profile] { width: 2.3cm }}

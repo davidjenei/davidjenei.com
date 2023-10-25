@@ -1,4 +1,4 @@
-tags: #linux #network
+tags: #linux #network #training
 
 Linux networking
 ================

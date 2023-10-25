@@ -1,4 +1,4 @@
-tags: #sw #ai
+tags: #ai
 title: AI engineer roadmap
 description: A roadmap for getting started and some links
 

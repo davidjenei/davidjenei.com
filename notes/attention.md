@@ -1,5 +1,5 @@
 tags: #attention
-description: Tips on how to survive in the attention economy
+description: Survival tips you should know in the attention economy
 title: Attention
 
 Our limited attention span

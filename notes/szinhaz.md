@@ -20,6 +20,7 @@ Katona
 
 -   Szeljegy
 -   Platonov
+-   Minden kombi cirkó...
 
 Pinter Bela
 -----------
@@ -29,4 +30,9 @@ Pinter Bela
 -   A 42. het
 -   Kaisers TV, Ungarn +
 -   Anyám orra
+-   A bajnok
 
+Narratíva
+---
+
+-   Demerung (Csehov Meggyeskertje)

@@ -1,4 +1,6 @@
 tags: #sw #debug
+title: Debugging
+description: Beyond printf
 
 Debugging
 =========
