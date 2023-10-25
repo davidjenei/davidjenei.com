@@ -53,12 +53,15 @@ tags/tag_%.md: $(NOTES) | tags
 	@echo "# Notes about #$*" > $@
 	@echo >> $@
 	@for file in $$(grep -l "^tags:.*#$*\b" notes/*.md); do			\
+		TITLE=$$(grep -oP "^title: \K.*" $${file} || echo $${file});	\
+		DESC=$$(grep -oP "^description: \K.*" $${file});		\
+		WORDS=$$(cat $${file} | wc -w);					\
 		printf "* [%s](../$${file})\n"					\
-			"$$(grep -oP "^title: \K.*" $${file} || echo $${file})" >> $@; \
+			"$$TITLE" >> $@;					\
 		echo >> $@; 							\
-		printf "\t *%s - %s words*\n"					\
-			"$$(grep -oP "^description: \K.*" $${file} || echo "_")"\
-			"$$(cat $${file} | wc -w)" >> $@ ;			\
+		printf "\t *%s%s words*\n"					\
+			"$$DESC$${DESC:+ - }"					\
+			"$$WORDS" >> $@ ;					\
 		echo >> $@;							\
     	done
 
