@@ -36,6 +36,7 @@ docs/%.pre: %.md | docs
 
 docs:
 	@mkdir -p $(DOC_DIRS)
+
 #################################################################################
 # BUILD TAGS
 #################################################################################
@@ -50,18 +51,23 @@ tags:
 	@mkdir $@
 
 tags/tag_%.md: $(NOTES) | tags
-	@echo "# Notes about #$*" > $@
+	@echo "title: #$*" > $@
+	@echo >> $@
+	@echo "# Notes about #$*" >> $@
 	@echo >> $@
 	@for file in $$(grep -l "^tags:.*#$*\b" notes/*.md); do			\
 		TITLE=$$(grep -oP "^title: \K.*" $${file} || echo $${file});	\
 		DESC=$$(grep -oP "^description: \K.*" $${file});		\
 		WORDS=$$(cat $${file} | wc -w);					\
+		DATE=$$(stat --format="%y" $${file} | cut -d' ' -f1);		\
 		printf "* [%s](../$${file})\n"					\
 			"$$TITLE" >> $@;					\
 		echo >> $@; 							\
-		printf "\t *%s%s words*\n"					\
-			"$$DESC$${DESC:+ - }"					\
-			"$$WORDS" >> $@ ;					\
+		printf "\t *%s%s words · %s*\n"					\
+			"$$DESC$${DESC:+ · }"					\
+			"$$WORDS" 						\
+			"$$DATE"						\
+			>> $@ ;							\
 		echo >> $@;							\
     	done
 
@@ -91,6 +97,7 @@ define html_envelope
 	@TITLE="$(shell grep -oP '^title:\s*\K.*' $(1) 2>/dev/null) - $(SITE)" envsubst < $(HTML) > $@
 	@cat $2 | envsubst '$$PHONE' >> $@
 	@cat $(HTML_END) >> $@
+	tidy --tidy-mark no -q -i -m $@
 endef
 
 DOC_DIRS=docs/tags docs/notes docs/blog
@@ -111,7 +118,7 @@ $(RESUME): docs/resume.pre $(HTML) $(NAV) $(HEADER) $(FOOTER) $(HTML_END)
 	$(call html_envelope, resume.md, $(BODY) $(NAV) $(HEADER) $< $(FOOTER))
 
 docs/tags/%.html: docs/tags/%.pre $(HTML) $(NAV) $(FOOTER) $(HTML_END) | $(TAGS_DIR)
-	$(call html_envelope, $*.md, fragments/body-tag.fragment $(NAV) $< $(FOOTER))
+	$(call html_envelope, tags/$*.md, fragments/body-tag.fragment $(NAV) $< $(FOOTER))
 
 docs/%.html: docs/%.pre $(HTML) $(NAV) $(FOOTER) $(HTML_END)
 	$(call html_envelope, $*.md, $(BODY) $(NAV) $< $(FOOTER))
@@ -136,6 +143,7 @@ help:
 	@echo "Targets:"
 	@echo "  all: Build /notes, /blog and the index pages"
 	@echo "  publish: Upload html docs to the server"
+	@echo "  gen-tags: Create tag pages"
 	@echo "  $(RESUME_PRIVATE): Build resume with phone number"
 	@echo "  $(RESUME_PUBLIC): Build resume without phone number"
 
