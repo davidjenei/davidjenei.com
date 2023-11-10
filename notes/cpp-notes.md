@@ -66,7 +66,7 @@ Similar to pointer, but:
 We use reference to ensure that we do not copy the object. Use const to
 make sure that we do not modify either.
 
-double sum(const vector<double>&);
+    double sum(const vector<double>&);
 
 nullptr
 
@@ -93,6 +93,7 @@ Initialization
 Initialization is not assignment. Initialization = make unassigned
 memory piece point to a valid object Assignment = Left must be lvalue.
 
+```
 int x = 7; int &r { x }; // bind r to x r = 7;
 
 int &r2; // error r2 = 99; // ???
@@ -100,6 +101,7 @@ int &r2; // error r2 = 99; // ???
 But you can use `=` for initialising reference;
 
 int &r = x; // this is not a form of value copy
+```
 
 The basic semantics of argument passing and function value return are
 that of initialization.

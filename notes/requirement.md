@@ -14,6 +14,8 @@ Requirements engineering
 Definition
 ----------
 
+IEEE definition:
+
 > [Requirements engineering][1] refers to engineered, systematic
 > gathering, documentation, testing and managing of requirements.
 
@@ -22,7 +24,7 @@ Definition
 > is unambiguous, testable, or measurable and necessary for product or
 > process acceptability.
 
-ok IEEE, thank you.
+More practical view from the development team's perspective:
 
 > ... (software) is living manifestation of the development team’s
 > collective understanding - [How to build good software]

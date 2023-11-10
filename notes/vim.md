@@ -1,5 +1,6 @@
 tags: #productivity #training
 description: Propaganda
+title: Vim
 
 Vim quick start
 ===============
@@ -88,6 +89,8 @@ Now insert the date in the current line.
 
     :help :.
 
+    :.!date
+
 Do the json lookup
 
     https://pokeapi.co
@@ -103,6 +106,13 @@ Single repeats
 Simple changes can be repeated with the `.` command.
 
 Global search and replace? Nah, search and repeat with dot.
+
+Multiple repeats
+---
+
+Keep lines that contain string
+
+    :v/keeeep/d
 
 Compare upstream and edited version of file in split
 ----------------------------------------------------
@@ -139,6 +149,7 @@ I try to live without plugins, but:
 -   [vim-lsp]
 -   [tagbar] - Universal ctags
 -   [ctrl-p]
+-   slime - `<c-c>v`, `<c-c><c-c>`, `<c-k><c-k>`
 
 Read more
 ---------

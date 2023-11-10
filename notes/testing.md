@@ -81,9 +81,9 @@ What is a test [framework]?
 
 How to do unit testing in a constrained environment (embedded):
 
--   [<https://jera.com/techinfo/jtns/jtn002>]
--   [<https://github.com/mdavidsaver/pvxs/blob/master/src/pvxs/unittest.h>]
--   [<https://eradman.com/posts/tdd-in-c.html>]
+-   <https://jera.com/techinfo/jtns/jtn002>
+-   <https://github.com/mdavidsaver/pvxs/blob/master/src/pvxs/unittest.h>
+-   <https://eradman.com/posts/tdd-in-c.html>
 
 ## Yet another integration test framework
 
@@ -147,7 +147,7 @@ test.
 
 ## Fuzzing
 
-[<https://lwn.net/Articles/637151/>]
+<https://lwn.net/Articles/637151/>
 
 ## Clean code
 

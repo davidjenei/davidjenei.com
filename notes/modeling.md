@@ -14,16 +14,18 @@ System and software modeling
 The computing world is already so complex, that we interact with it
 through a great number of abstractions.
 
-> Text is an ideal medium for abstract logic. - [Maggie Appleton]
+> All models are wrong, some are useful. - [George E.P. Box]
 
 Mainstream programming languages operate with a textual content format.
+
+> Text is an ideal medium for abstract logic. - [Maggie Appleton]
 
 > This level of abstraction removes the physical, spatial, and embodied
 > qualities that humans rely upon to understand the world around us. -
 > [Maggie Appleton]
 
-The benefits of text format still outweighs the cons. There is a
-gap between code and pictures, because visuals are also abstractions.
+The benefits of text format still outweighs the cons. There is a gap
+between code and pictures, because visuals are also abstractions.
 
 > There is a reason why digital circuit design has shifted to use of
 > HDLs - HN
@@ -53,7 +55,7 @@ Use modeling as a **specification** language:
 Modeling can be part of the design process: **design without
 implementation**.
 
-but keep in mind:
+but keep in mind (e.g. vhdl):
 
 > At the end of the day plain text (code) is the universal truth
 
@@ -124,14 +126,13 @@ Model software as one aggregate object first.
 Resources
 ---------
 
--   [<https://garba.org/posts/2021/uml/>]
--   [<https://martinfowler.com/bliki/UmlMode.html>]
--   [<https://buttondown.email/hillelwayne/archive/why-uml-really-died/>]
--   [<http://mason.gmu.edu/>\~hgomaa/swe760/SWE760-6-Dynamic-Interaction-Modeling-RT.pdf]
--   [<https://news.ycombinator.com/item?id=12879056>]
--   [<https://garba.org/posts/2018/arrows/>]
--   [<https://blog.regehr.org/archives/1653>]
--   [<https://news.ycombinator.com/item?id=31891226>]
+-   <https://garba.org/posts/2021/uml/>
+-   <https://martinfowler.com/bliki/UmlMode.html>
+-   <https://buttondown.email/hillelwayne/archive/why-uml-really-died/>
+-   <https://news.ycombinator.com/item?id=12879056>
+-   <https://garba.org/posts/2018/arrows/>
+-   <https://blog.regehr.org/archives/1653>
+-   <https://news.ycombinator.com/item?id=31891226>
 
   [System and software modeling]: #system-and-software-modeling
   [How can we use visual modeling?]: #how-can-we-use-visual-modeling
@@ -140,14 +141,5 @@ Resources
   [Dynamic models]: #dynamic-models
   [Embedded system modeling]: #embedded-system-modeling
   [Resources]: #resources
+  [George E.P. Box]: https://www.goodreads.com/quotes/7729857-essentially-all-models-are-wrong-but-some-are-useful
   [Maggie Appleton]: https://maggieappleton.com/programming-pictures
-  [<https://garba.org/posts/2021/uml/>]: https://garba.org/posts/2021/uml/
-  [<https://martinfowler.com/bliki/UmlMode.html>]: https://martinfowler.com/bliki/UmlMode.html
-  [<https://buttondown.email/hillelwayne/archive/why-uml-really-died/>]:
-    https://buttondown.email/hillelwayne/archive/why-uml-really-died/
-  [<http://mason.gmu.edu/>\~hgomaa/swe760/SWE760-6-Dynamic-Interaction-Modeling-RT.pdf]:
-    http://mason.gmu.edu/~hgomaa/swe760/SWE760-6-Dynamic-Interaction-Modeling-RT.pdf
-  [<https://news.ycombinator.com/item?id=12879056>]: https://news.ycombinator.com/item?id=12879056
-  [<https://garba.org/posts/2018/arrows/>]: https://garba.org/posts/2018/arrows/
-  [<https://blog.regehr.org/archives/1653>]: https://blog.regehr.org/archives/1653
-  [<https://news.ycombinator.com/item?id=31891226>]: https://news.ycombinator.com/item?id=31891226

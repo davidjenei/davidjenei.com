@@ -1,4 +1,6 @@
 tags: #python
+title: Python
+description: Zen and philosophy
 
 Python
 ======
@@ -8,8 +10,8 @@ Zen
 
     >>> import this
 
-[Stop writing classes]
-----------------------
+[Stop writing classes][1]
+-------------------------
 
 1.  if your class has two methods and one is `__init__`, it is probably
     not a class
@@ -27,47 +29,14 @@ Working backwards
 Imagine what the user will type when uses your code. Then implement
 that.
 
-[Scripts inside modules]
-------------------------
+[Scripts inside modules][2]
+---------------------------
 
 > I'm -1 on this and on any other proposed twiddlings of the **main**
 > machinery. The only use case seems to be running scripts that happen
 > to be living inside a module's directory, which I've always seen as an
 > antipattern. To make me change my mind you'd have to convince me that
 > it isn't.
-
-[For Python packages, file structure != API]
---------------------------------------------
-
-    # tekst/__init__.py
-
-    __all__ = ['Token', 'tokenize', ...]
-
-    from .tokenizer import Token, tokenize
-
-Snippets from [Effective Python: 59 ways..]
--------------------------------------------
-
-**Meta classes**
-
-Call a function automatically in a class definition:
-
-> Another common use of metaclass is to automatically register types in
-> your program. Registration is useful for doing reverse lookups, where
-> you need to map a simple identifier back to a corresponding class.
->
-> For example, say you want to implement your own serialized
-> representation of a Python object using JSON. You need a way to take
-> an object and turn it into a JSON string. Here, I do this generically
-> by defining a base class that records the constructor parameters and
-> turns them into a JSON dictionary.
-
-**@property**
-
-> For example, say you want to define a new class that represents a row
-> in your customer database. You'd like a corresponding property on the
-> class for each column in the database table. To do this, here I define
-> a descriptor class to connect attributes to column names.
 
 Monkey patching
 ---------------
@@ -99,10 +68,18 @@ Cython, SWIG, pybind11?
 >
 > [gyrovagueGeist]
 
-  [Stop writing classes]: https://www.youtube.com/watch?v=o9pEzgHorH0&feature=youtu.be
-  [Scripts inside modules]: https://mail.python.org/pipermail/python-3000/2007-April/006793.html
-  [For Python packages, file structure != API]: https://benhoyt.com/writings/python-api-file-structure/
-  [Effective Python: 59 ways..]: https://www.goodreads.com/en/book/show/23020812
+  [Python]: #python
+  [The purpose of these notes]: #the-purpose-of-these-notes
+  [Zen]: #zen
+  [Stop writing classes]: #stop-writing-classes
+  [Working backwards]: #working-backwards
+  [Scripts inside modules]: #scripts-inside-modules
+  [Monkey patching]: #monkey-patching
+  [Nice projects]: #nice-projects
+  [Packaging]: #packaging
+  [Python and C]: #python-and-c
+  [1]: https://www.youtube.com/watch?v=o9pEzgHorH0&feature=youtu.be
+  [2]: https://mail.python.org/pipermail/python-3000/2007-April/006793.html
   [Tornado]: https://github.com/tornadoweb/tornado
   [RPM + Python]: https://grimoire.carcano.ch/blog/packaging-a-python-wheel-as-rpm/
   [gyrovagueGeist]: https://news.ycombinator.com/item?id=36778617

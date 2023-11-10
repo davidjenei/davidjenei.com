@@ -1,4 +1,6 @@
 tags: #linux #embedded #build
+title: Embedded Linux build systems
+description: Buildroot and Yocto tips
 
 Embedded Linux build systems
 ============================

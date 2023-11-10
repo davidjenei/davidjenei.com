@@ -28,6 +28,8 @@ Missing features
 ----------------
 
 -   RSS: will do
+-   navigation bar on top
+-   links to tags
 -   generated pdf from resume: won't do, I'll use my favourite browser
 
 My workflow

@@ -18,11 +18,8 @@ the [250kB club].
 Contact
 -------
 
-Email: [<info@davidjenei.com>]
-
-Github: [\~davidjenei]
-
-PGP: [90347603]
+* Email: [<info@davidjenei.com>]
+* PGP: [90347603]
 
   [About]: #about
   [About this website]: #about-this-website
@@ -32,5 +29,4 @@ PGP: [90347603]
   [Technology Radar]: ./radar.html
   [250kB club]: https://250kb.club/davidjenei-com/
   [<info@davidjenei.com>]: mailto:info@davidjenei.com
-  [\~davidjenei]: https://github.com/davidjenei/
   [90347603]: http://pgp.mit.edu/pks/lookup?op=get&search=0x26C53F3E90347603
