@@ -42,6 +42,7 @@ docs:
 #################################################################################
 
 NOTES=$(wildcard notes/*.md)
+RECENT=$(shell ls -t notes/*md | head -n 3)
 TAGS=$(shell grep -oPh '^tags:\s*\K.*' notes/*.md	 \
         | tr -d '#'					 \
         | tr ' ' '\n'					 \
@@ -79,6 +80,27 @@ tags.md: $(NOTES)
 		grep -o "^tags:.*#$(tag)\b" notes/*.md | wc -l >> $@; \
 	)
 
+recent.md: $(RECENT)
+	@echo "## Recent updates { .recent }" > $@
+	@echo >> $@
+	@for file in $(RECENT); do			\
+		TITLE=$$(grep -oP "^title: \K.*" $${file} || echo $${file});	\
+		DESC=$$(grep -oP "^description: \K.*" $${file});		\
+		TAGS=$$(grep -oP "^tags: \K.*" $${file});			\
+		WORDS=$$(cat $${file} | wc -w);					\
+		DATE=$$(stat --format="%y" $${file} | cut -d' ' -f1);		\
+		printf "* [%s](../$${file})\n"					\
+			"$$TITLE" >> $@;					\
+		echo >> $@; 							\
+		printf "\t *%s%s words · %s* · %s\n"				\
+			"$$DESC$${DESC:+ · }"					\
+			"$$WORDS" 						\
+			"$$DATE"						\
+			"$$TAGS"						\
+			>> $@ ;							\
+		echo >> $@;							\
+	done
+
 .PHONY:
 gen-tags: tags.md $(patsubst %,tags/tag_%.md,$(TAGS))
 
@@ -105,7 +127,7 @@ DOC_DIRS=docs/tags docs/notes docs/blog
 $(DOC_DIRS):
 	mkdir -p $@
 
-docs/notes.html: docs/notes.pre docs/tags.pre
+docs/notes.html: docs/notes.pre docs/tags.pre docs/recent.pre
 	$(call html_envelope, notes.md, fragments/body-tags.fragment $(NAV) $^ $(FOOTER))
 
 docs/resume-%.html: docs/resume.pre fragments/resume-%.fragment
