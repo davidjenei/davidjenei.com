@@ -1,4 +1,7 @@
+title: Beágyazott alkalmazások telepítése és üzemeltetése Linux alapú peremhálózatokban
+description: Bachelor's thesis
 tags: #student
+maturity: 🌻
 
 Beágyazott alkalmazások telepítése és üzemeltetése Linux alapú peremhálózatokban
 ================================================================================

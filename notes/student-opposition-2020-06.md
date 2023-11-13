@@ -1,6 +1,10 @@
 tags: #student
+description: Opposition
+title: “Linux portolása ZYNQ 7000 SOC-re“
+maturity: 🌻
 
-VARGA TAMÁS "LINUX PORTOLÁSA ZYNQ 7000 SOC-RE" CÍMŰ DIPLOMATERVÉNEK A BÍRÁLATA
+
+X.Y "LINUX PORTOLÁSA ZYNQ 7000 SOC-RE" CÍMŰ DIPLOMATERVÉNEK A BÍRÁLATA
 ==============================================================================
 
 A Xilinx 2011-ben megjelent Zynq-7000 családja a számítási architektúrák

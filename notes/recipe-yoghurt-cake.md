@@ -1,5 +1,6 @@
 title: Yoghurt cake
-tags: #recipe
+tags: #recipe #dessert
+description: Joghurtos süti
 
 Joghurtos süti
 ==============

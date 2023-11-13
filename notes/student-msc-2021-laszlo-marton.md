@@ -1,4 +1,7 @@
 tags: #student
+description: Master's thesis
+maturity: 🌻
+title: Konténer-alapú grafikus alkalmazások futtatása beágyazott környezetben
 
 Konténer-alapú grafikus alkalmazások futtatása beágyazott környezetben
 ======================================================================

@@ -125,43 +125,47 @@ define html_envelope
 	@echo "<title>$(shell grep -oP '^title:\s*\K.*' $(1) 2>/dev/null) - $(SITE)</title>" >> $@
 	@echo '</head>' >> $@
 	@echo '<body>' >> $@
-	@test -z $(RAW) && $(nav) || true
-	test -n "$(HEADER)" && $(header) || true
+	@test -z $(RAW) && echo '$(NAV_HTML)' >> $@ || true
+	@echo '$(EXTRA)' >> $@
 	@cat $2 | envsubst '$$PHONE' >> $@
-	@test -z $(RAW) && $(footer) || true
+	@test -z $(RAW) && echo '$(FOOTER_HTML)' >> $@ || true
 	@echo '</body>' >> $@
 	@echo '</html>' >> $@
 	tidy --tidy-mark no -q -i -m $@
 endef
 
-define nav
-	echo '<nav>' >> $@ && \
-	echo '<a href="/">About</a> •' >> $@ && \
-	echo '<a href="/blog">Posts</a> •' >> $@ && \
-	echo '<a href="/notes">Notes</a> •' >> $@ && \
-	echo '<a href="/resume">Resume</a>' >> $@ && \
-	echo '</nav>' >> $@
+define NAV_HTML
+	<nav>				\
+	<a href="/">About</a> • 	\
+	<a href="/blog">Posts</a> •	\
+	<a href="/notes">Notes</a> •	\
+	<a href="/resume">Resume</a>	\
+	</nav>
 endef
 
-define footer
-	echo '<footer>' >> $@ && \
-	echo '<hr>' >> $@ && \
-	echo '<a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> |' >> $@ && \
-	echo 'This website was made using markdown,' >> $@ && \
-	echo '<a href="https://kristaps.bsd.lv/lowdown/">lowdown</a>, and <a href="https://www.gnu.org/software/make/">make</a>.' >> $@ && \
-	echo '</footer>' >> $@
+define FOOTER_HTML
+	<footer>								\
+	<hr>									\
+  	<a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> | \
+	This website was made using markdown,					\
+	<a href="https://kristaps.bsd.lv/lowdown/">lowdown</a>			\
+	and <a href="https://www.gnu.org/software/make/">make</a>.		\
+	</footer>
 endef
 
-define header
-	echo '<div id="header">' >> $@ && \
-	echo '<div id="column">' >> $@ && \
-	echo '<h1 id="name">Dávid Jenei</h1>' >> $@ && \
-	echo 'Budapest, HU • <a href="mailto:info@davidjenei.com">info@davidjenei.com</a>' >> $@ && \
-	echo '</div>' >> $@ && \
-	echo '<div id="image">' >> $@ && \
-	echo '<img src="./profile.jpg" alt="profile" />' >> $@ && \
-	echo '</div>' >> $@ && \
-	echo '</div>' >> $@
+define HEADER_HTML
+	<div id="header">							\
+	<div id="column">			 				\
+	<h1 id="name">Dávid Jenei</h1>		 			        \
+	$(TITLE_HTML)								\
+	Budapest, HU • 								\
+	<a href="mailto:info@davidjenei.com">info@davidjenei.com</a>		\
+	$(PHONE_HTML)								\
+	</div> 									\
+	<div id="image">							\
+	<img src="./profile.jpg" alt="profile" />				\
+	</div> 									\
+	</div>
 endef
 
 DOC_DIRS=docs/tags docs/notes docs/blog
@@ -169,11 +173,15 @@ DOC_DIRS=docs/tags docs/notes docs/blog
 $(DOC_DIRS):
 	mkdir -p $@
 
-docs/resume-%.html: docs/resume.pre fragments/resume-%.fragment
-	$(call html_envelope, resume.md, fragments/resume-$*.fragment docs/resume.pre)
+docs/resume-private.html: PHONE_HTML=• <a href="tel:${PHONE}">${PHONE}</a>
+docs/resume-%.html: EXTRA=$(HEADER_HTML)
+docs/resume-%.html: RAW=yes
+docs/resume-%.html: TITLE_HTML=<p>Embedded Software Engineer</p>
+docs/resume-%.html: docs/resume.pre
+	$(call html_envelope, resume.md, $^)
 
-$(INDEX): HEADER=yes
-$(RESUME): HEADER=yes
+$(INDEX): EXTRA=$(HEADER_HTML)
+$(RESUME): EXTRA=$(HEADER_HTML)
 
 docs/notes.html: docs/notes.pre docs/tags.pre docs/recent.pre
 docs/%.html: docs/%.pre

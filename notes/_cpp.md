@@ -1,5 +1,6 @@
 title: About #cpp
 tags: #cpp
+description: Zero cost abstraction
 
 About #cpp
 ==========

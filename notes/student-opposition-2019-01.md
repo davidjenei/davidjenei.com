@@ -1,6 +1,9 @@
 tags: #student
+description: Opposition
+maturity: 🌻
+title: „Okos kaptár tervezése és megvalósítása” című szakdolgozatának bírálata
 
-Wolf Ádám „ Okos kaptár tervezése és megvalósítása ” című szakdolgozatának bírálata
+X.Y „ Okos kaptár tervezése és megvalósítása ” című szakdolgozatának bírálata
 ===================================================================================
 
 A dolgozat a hálózatba kapcsolt beágyazott rendszerek egy mezőgazdasági

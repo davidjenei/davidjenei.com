@@ -1,4 +1,7 @@
 tags: #student
+title: Biztonságos autóipari átjáró fejlesztése
+description: Master's thesis
+maturity: 🌻
 
 Biztonságos autóipari átjáró fejlesztése
 ========================================

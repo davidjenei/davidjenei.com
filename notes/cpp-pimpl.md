@@ -1,4 +1,5 @@
 tags: #cpp
+title: PIMPL pattern
 
 Pointer to implementation pattern
 =================================

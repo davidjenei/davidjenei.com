@@ -6,7 +6,7 @@ Make
 ====
 
 > **Go to:** [Links] · [My C++ Makefile project] · [Response to Make
-critics] · [Alternatives] · [CMake] · [Autotools]
+> critics] · [Alternatives] · [CMake] · [Autotools]
 
 Links
 -----
@@ -43,6 +43,8 @@ Definitely not self-documenting, but we can have something like this:
         @echo "  debug: Builds all with debug flags"
         @echo "  release: Build with optimiser"
         @echo "  test: Build test executable"
+
+[Or autogenerate this from comments]
 
 **Makes does not come with batteries included**
 
@@ -132,6 +134,7 @@ Autotools
   [Makefile Tutorial]: https://makefiletutorial.com/
   [GNU Make guidelines]: https://interrupt.memfault.com/blog/gnu-make-guidelines
   [BSD Makefile example]: https://github.com/kristapsdz/lowdown/blob/master/Makefile
+  [Or autogenerate this from comments]: https://jakemccrary.com/blog/2018/12/27/a-more-helpful-makefile/
   [Invoke]: https://interrupt.memfault.com/blog/building-a-cli-for-firmware-projects
   [examples]: https://github.com/memfault/memfault-firmware-sdk/blob/master/tasks/gdb.py
   [Rise of Meson]: https://gms.tf/the-rise-of-meson.html

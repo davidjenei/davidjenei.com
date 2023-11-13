@@ -1,4 +1,6 @@
 tags: #student
+title: How to write an opposition
+maturity: 🌻
 
 Szempontok a szakdolgozat-bírálat elkészítéséhez
 ================================================

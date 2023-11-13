@@ -1,7 +1,8 @@
-title: American Pancake
-tags: #recipe
+title: American pancake
+tags: #recipe #dessert
+description: Amerikai palacsinta
 
-American Pancake
+American pancake
 ================
 
 Ingredients
@@ -15,6 +16,7 @@ Ingredients
 -   1 large egg or 2 medium
 -   50g melted butter
 -   130ml milk
+-   blueberry !!
 
 Method
 ------
@@ -22,6 +24,7 @@ Method
 - start with max setting on the pancake maker, then decrease
 - 3 minutes, 1cm thick, golden brown
 - 5x 10-15 cm diameter
+- topping: Maple syrup
 
   [American Pancake]: #american-pancake
   [Ingredients]: #ingredients

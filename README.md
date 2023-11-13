@@ -37,6 +37,9 @@ My workflow
 
 Coming soon.
 
+> Notes hierarchy: 🌱 < 🌿 < 🌻.
+> Copied from strikingloo.github.io
+
   [davidjenei.com 👋]: #davidjeneicom-
   [How it works]: #how-it-works
   [Missing features]: #missing-features

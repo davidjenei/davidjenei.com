@@ -1,4 +1,7 @@
 tags: #student
+title: Project ideas
+description: For intership and thesis
+maturity: 🌿
 
 Student project ideas
 =====================

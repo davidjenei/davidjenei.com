@@ -1,4 +1,8 @@
 tags: #student
+title: Neurális hálók futtatásának hardveres gyorsítása beágyazott környezetben
+description: Master's thesis
+maturity: 🌻
+
 
 Neurális hálók futtatásának hardveres gyorsítása beágyazott környezetben
 ========================================================================

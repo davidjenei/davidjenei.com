@@ -1,4 +1,7 @@
 tags: #student
+title: Internship review example
+description: Short format
+maturity: 🌱
 
 Student feedback HU
 -------------------

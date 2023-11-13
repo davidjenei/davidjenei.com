@@ -1,5 +1,6 @@
 title: Chocolate chip muffin
 tags: #recipe
+description: Csokidarabos muffin
 
 Chocolate chip muffin
 ==

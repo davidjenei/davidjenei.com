@@ -99,7 +99,9 @@ Don't forget to log the version information on startup.
 Use consistent log format
 -------------------------
 
-Reuse the same log formatter.
+Reuse the same log formatter. For C++ here is a recommended formatter for `spdlog`
+
+    logger->set_pattern("%^[%L][%Y-%m-%d %H:%M:%S.%e][%n][thread %t] %v%$");
 
 Pay attention to readability
 ----------------------------

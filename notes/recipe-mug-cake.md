@@ -1,5 +1,6 @@
-title: Bögrés süti
-tags: #recipe
+title: Mug cake
+description: Bögrés süti
+tags: #recipe #dessert
 
 Bögrés süti
 ===========

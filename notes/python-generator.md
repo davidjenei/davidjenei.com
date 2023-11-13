@@ -1,5 +1,6 @@
 title: Iterables, generators, yield
 tags: #python
+maturity: 🌿
 
 Iterables
 =========

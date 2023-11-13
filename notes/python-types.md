@@ -1,5 +1,6 @@
 title: Built-in types
 tags: #python
+maturity: 🌻
 
 Built-in types
 ==============

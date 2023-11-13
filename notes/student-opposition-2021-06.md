@@ -1,6 +1,9 @@
 tags: #student
+description: Opposition
+title: “Objektumok felismerése és követése felhőből vezérelt drónokkal” című szakdolgozatának bírálata
+maturity: 🌻
 
-Czurkó Dániel “Objektumok felismerése és követése felhőből vezérelt drónokkal” című szakdolgozatának bírálata
+X.Y “Objektumok felismerése és követése felhőből vezérelt drónokkal” című szakdolgozatának bírálata
 =============================================================================================================
 
 A drónok vagyis a pilóta nélküli repülőgépek széleskörű alkalmazását a

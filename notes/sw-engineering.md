@@ -1,6 +1,7 @@
 title: Software engineering
 tags: #sw #communication
 description: What makes software engineering challenging?
+maturity: 🌻
 
 Software engineering
 ====================
@@ -13,8 +14,6 @@ Software engineering
 > [Choose boring technology] · [Selecting dependencies is art] ·
 > [Characteristics] · [Your Coding Philosophies are Irrelevant] ·
 > [Second-system effect]
-
-> **Last updated:** [%date]
 
 What makes software engineering hard? Is it even engineering?
 

@@ -1,4 +1,5 @@
 tags: #cpp
+title: Type erasure
 
 Type erasure
 ============
