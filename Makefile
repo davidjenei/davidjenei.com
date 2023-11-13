@@ -61,16 +61,21 @@ tags/tag_%.md: $(NOTES) | tags
 		DESC=$$(grep -oP "^description: \K.*" $${file});		\
 		MATURITY=$$(grep -oP "^maturity: \K.*" $${file});		\
 		WORDS=$$(cat $${file} | wc -w);					\
+		TAGS=$$(grep -oP "^tags: \K.*" $${file});			\
 		DATE=$$(stat --format="%y" $${file} | cut -d' ' -f1);		\
 		printf "* [%s](../$${file})\n"					\
 			"$$TITLE" >> $@;					\
 		echo >> $@; 							\
-		printf "\t *%s%s%s words · %s*\n"				\
+		printf "\t *%s%s%s words · %s*"					\
 			"$$DESC$${DESC:+ · }"					\
 			"$${MATURITY:+$$MATURITY · }"				\
 			"$$WORDS" 						\
 			"$$DATE"						\
 			>> $@ ;							\
+		for _tag in $$TAGS; do                                          \
+                       TAG=$$(echo $${_tag} | tr -d '#');                       \
+                       echo " · [$${_tag}](../tags/tag_$${TAG}.md)" >> $@;	\
+                done;                                                           \
 		echo >> $@;							\
     	done
 
@@ -116,33 +121,42 @@ gen-tags: tags.md $(patsubst %,tags/tag_%.md,$(TAGS))
 #################################################################################
 
 define html_envelope
-	@echo '<!DOCTYPE html>' > $@
-	@echo '<html lang="en">' >> $@
-	@echo '<head>' >> $@
-	@echo '<meta charset="utf-8">' >> $@
-	@echo '<meta name="viewport" content="width=device-width,initial-scale=1">' >> $@
-	@echo '<link rel="stylesheet" href="/style.css">' >> $@
-	@echo "<title>$(shell grep -oP '^title:\s*\K.*' $(1) 2>/dev/null) - $(SITE)</title>" >> $@
-	@echo '</head>' >> $@
-	@echo '<body>' >> $@
-	@test -z $(RAW) && echo '$(NAV_HTML)' >> $@ || true
-	@echo '$(EXTRA)' >> $@
-	@cat $2 | envsubst '$$PHONE' >> $@
-	@test -z $(RAW) && echo '$(FOOTER_HTML)' >> $@ || true
-	@echo '</body>' >> $@
-	@echo '</html>' >> $@
+	@TITLE="$(shell grep -oP "^title:\s*\K.*" $(1) 2>/dev/null)"; \
+	printf "$(HEAD_HTML)" "$${TITLE}" > $@
+	@test -z $(RAW) && echo "$(NAV_HTML)" >> $@ || true
+	@echo "$(PREPEND)" >> $@
+	@cat $2  >> $@
+	@test -z $(RAW) && echo "$(FOOTER_HTML)" >> $@ || true
+	@echo "$(BODY_END_HTML)" >> $@
+
+	@tidy --tidy-mark no -q -i -m $@
+	@echo "$@ generated"
 endef
 
-define NAV_HTML
-	<nav>				\
- 	  <a href="/">About</a> • 	\
-	  <a href="/blog">Posts</a> •	\
-	  <a href="/notes">Notes</a> •	\
-	  <a href="/resume">Resume</a>	\
+HEAD_HTML = 									\
+	<!DOCTYPE html> 							\
+	<html lang="en"> 							\
+	<head> 									\
+	  <meta charset="utf-8">						\
+	  <meta name="viewport" content="width=device-width,initial-scale=1">	\
+	  <link rel="stylesheet" href="/style.css">	 			\
+	  <title>%s - $(SITE)</title> 						\
+	</head> 								\
+	<body>
+
+NAV_HTML = 									\
+	<nav>									\
+ 	  <a href="/">About</a> • 						\
+	  <a href="/blog">Posts</a> •						\
+	  <a href="/notes">Notes</a> •						\
+	  <a href="/resume">Resume</a>						\
 	</nav>
-endef
 
-define FOOTER_HTML
+BODY_END_HTML =									\
+	</body>									\
+	</html>
+
+FOOTER_HTML =									\
 	<footer>								\
 	<hr>									\
   	  <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> | \
@@ -151,9 +165,8 @@ define FOOTER_HTML
 	  and									\
 	  <a href="https://www.gnu.org/software/make/">make</a>.		\
 	</footer>
-endef
 
-define HEADER_HTML
+BIO_HTML =									\
 	<div id="header">							\
 	  <div>				 					\
 	    <h1>Dávid Jenei</h1>			 		        \
@@ -166,23 +179,20 @@ define HEADER_HTML
 	    <img src="./profile.jpg" alt="profile" />				\
 	  </div> 								\
 	</div>
-endef
 
 docs/%.html: docs/%.pre
 	$(call html_envelope, $*.md, $^ )
-	@tidy --tidy-mark no -q -i -m $@
-	@echo "$@ generated"
 
 docs/notes.html: docs/notes.pre docs/tags.pre docs/recent.pre
 
-$(INDEX): EXTRA=$(HEADER_HTML)
-$(RESUME): EXTRA=$(HEADER_HTML)
+$(INDEX): PREPEND=$(BIO_HTML)
+$(RESUME): PREPEND=$(BIO_HTML)
 
 #################################################################################
 # RESUMES
 #################################################################################
 
-docs/resume-%.html: EXTRA=$(HEADER_HTML)
+docs/resume-%.html: PREPEND=$(BIO_HTML)
 docs/resume-%.html: RAW=yes
 docs/resume-%.html: TITLE_HTML=<p>Embedded Software Engineer</p>
 docs/resume-%.html: docs/resume.pre
