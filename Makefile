@@ -16,6 +16,8 @@ POST_HTMLS=$(patsubst blog/%.md,docs/blog/%.html,$(wildcard blog/*.md))
 NOTES_HTMLS=$(patsubst notes/%.md,docs/notes/%.html,$(wildcard notes/*.md))
 TAG_HTMLS=$(patsubst tags/%.md,docs/tags/%.html,$(wildcard tags/*.md))
 
+DOC_DIRS=docs/tags docs/notes docs/blog
+
 .PHONY: all
 all : $(HTMLS) $(POST_HTMLS) $(NOTES_HTMLS) $(TAG_HTMLS)
 
@@ -23,19 +25,17 @@ all : $(HTMLS) $(POST_HTMLS) $(NOTES_HTMLS) $(TAG_HTMLS)
 # MARKDOWN TO HTML
 #################################################################################
 
-DATE_STR != date "+%B %d, %Y"
 LOWDOWN_ARGS= -Thtml \
 	--html-no-skiphtml \
 	--html-no-escapehtml \
 	--html-no-owasp \
-	--html-no-num-ent \
-        -mdate="${DATE_STR}"
+	--html-no-num-ent
 
-docs/%.pre: %.md | docs
+$(DOC_DIRS):
+	@mkdir -p $@
+
+docs/%.pre: %.md | $(DOC_DIRS)
 	@cat $< | sed 's/\.md/.html/g' | lowdown -o $@ $(LOWDOWN_ARGS)
-
-docs:
-	@mkdir -p $(DOC_DIRS)
 
 #################################################################################
 # BUILD TAGS
@@ -131,61 +131,64 @@ define html_envelope
 	@test -z $(RAW) && echo '$(FOOTER_HTML)' >> $@ || true
 	@echo '</body>' >> $@
 	@echo '</html>' >> $@
-	tidy --tidy-mark no -q -i -m $@
 endef
 
 define NAV_HTML
 	<nav>				\
-	<a href="/">About</a> • 	\
-	<a href="/blog">Posts</a> •	\
-	<a href="/notes">Notes</a> •	\
-	<a href="/resume">Resume</a>	\
+ 	  <a href="/">About</a> • 	\
+	  <a href="/blog">Posts</a> •	\
+	  <a href="/notes">Notes</a> •	\
+	  <a href="/resume">Resume</a>	\
 	</nav>
 endef
 
 define FOOTER_HTML
 	<footer>								\
 	<hr>									\
-  	<a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> | \
-	This website was made using markdown,					\
-	<a href="https://kristaps.bsd.lv/lowdown/">lowdown</a>			\
-	and <a href="https://www.gnu.org/software/make/">make</a>.		\
+  	  <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> | \
+	  This website was made using markdown,					\
+	  <a href="https://kristaps.bsd.lv/lowdown/">lowdown</a>		\
+	  and									\
+	  <a href="https://www.gnu.org/software/make/">make</a>.		\
 	</footer>
 endef
 
 define HEADER_HTML
 	<div id="header">							\
-	<div id="column">			 				\
-	<h1 id="name">Dávid Jenei</h1>		 			        \
-	$(TITLE_HTML)								\
-	Budapest, HU • 								\
-	<a href="mailto:info@davidjenei.com">info@davidjenei.com</a>		\
-	$(PHONE_HTML)								\
-	</div> 									\
-	<div id="image">							\
-	<img src="./profile.jpg" alt="profile" />				\
-	</div> 									\
+	  <div>				 					\
+	    <h1>Dávid Jenei</h1>			 		        \
+	    $(TITLE_HTML)							\
+	    Budapest, HU • 							\
+	    <a href="mailto:info@davidjenei.com">info@davidjenei.com</a>	\
+	    $(PHONE_HTML)							\
+	  </div> 								\
+	  <div>									\
+	    <img src="./profile.jpg" alt="profile" />				\
+	  </div> 								\
 	</div>
 endef
 
-DOC_DIRS=docs/tags docs/notes docs/blog
+docs/%.html: docs/%.pre
+	$(call html_envelope, $*.md, $^ )
+	@tidy --tidy-mark no -q -i -m $@
+	@echo "$@ generated"
 
-$(DOC_DIRS):
-	mkdir -p $@
+docs/notes.html: docs/notes.pre docs/tags.pre docs/recent.pre
 
-docs/resume-private.html: PHONE_HTML=• <a href="tel:${PHONE}">${PHONE}</a>
+$(INDEX): EXTRA=$(HEADER_HTML)
+$(RESUME): EXTRA=$(HEADER_HTML)
+
+#################################################################################
+# RESUMES
+#################################################################################
+
 docs/resume-%.html: EXTRA=$(HEADER_HTML)
 docs/resume-%.html: RAW=yes
 docs/resume-%.html: TITLE_HTML=<p>Embedded Software Engineer</p>
 docs/resume-%.html: docs/resume.pre
 	$(call html_envelope, resume.md, $^)
 
-$(INDEX): EXTRA=$(HEADER_HTML)
-$(RESUME): EXTRA=$(HEADER_HTML)
-
-docs/notes.html: docs/notes.pre docs/tags.pre docs/recent.pre
-docs/%.html: docs/%.pre
-	$(call html_envelope, $*.md, $^ )
+docs/resume-private.html: PHONE_HTML=• <a href="tel:${PHONE}">${PHONE}</a>
 
 #################################################################################
 # TASKS
