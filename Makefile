@@ -42,7 +42,7 @@ docs:
 #################################################################################
 
 NOTES=$(wildcard notes/*.md)
-RECENT=$(shell ls -t notes/*md | head -n 3)
+RECENT=$(shell ls -t notes/*md | head -n 5)
 TAGS=$(shell grep -oPh '^tags:\s*\K.*' notes/*.md	 \
         | tr -d '#'					 \
         | tr ' ' '\n'					 \
@@ -54,18 +54,20 @@ tags:
 tags/tag_%.md: $(NOTES) | tags
 	@echo "title: #$*" > $@
 	@echo >> $@
-	@echo "# Notes about #$*" >> $@
+	@echo "# Notes tagged with #$* { .tag }" >> $@
 	@echo >> $@
 	@for file in $$(grep -l "^tags:.*#$*\b" notes/*.md); do			\
 		TITLE=$$(grep -oP "^title: \K.*" $${file} || echo $${file});	\
 		DESC=$$(grep -oP "^description: \K.*" $${file});		\
+		MATURITY=$$(grep -oP "^maturity: \K.*" $${file});		\
 		WORDS=$$(cat $${file} | wc -w);					\
 		DATE=$$(stat --format="%y" $${file} | cut -d' ' -f1);		\
 		printf "* [%s](../$${file})\n"					\
 			"$$TITLE" >> $@;					\
 		echo >> $@; 							\
-		printf "\t *%s%s words · %s*\n"					\
+		printf "\t *%s%s%s words · %s*\n"				\
 			"$$DESC$${DESC:+ · }"					\
+			"$${MATURITY:+$$MATURITY · }"				\
 			"$$WORDS" 						\
 			"$$DATE"						\
 			>> $@ ;							\
@@ -88,16 +90,21 @@ recent.md: $(RECENT)
 		DESC=$$(grep -oP "^description: \K.*" $${file});		\
 		TAGS=$$(grep -oP "^tags: \K.*" $${file});			\
 		WORDS=$$(cat $${file} | wc -w);					\
+		MATURITY=$$(grep -oP "^maturity: \K.*" $${file});		\
 		DATE=$$(stat --format="%y" $${file} | cut -d' ' -f1);		\
 		printf "* [%s](../$${file})\n"					\
 			"$$TITLE" >> $@;					\
 		echo >> $@; 							\
-		printf "\t *%s%s words · %s* · %s\n"				\
+		printf "\t *%s%s%s words*"					\
 			"$$DESC$${DESC:+ · }"					\
+			"$${MATURITY:+$$MATURITY · }"				\
 			"$$WORDS" 						\
-			"$$DATE"						\
-			"$$TAGS"						\
 			>> $@ ;							\
+		for _tag in $$TAGS; do                                          \
+                       TAG=$$(echo $${_tag} | tr -d '#');                       \
+                       echo -n " · [$${_tag}](tags/tag_$${TAG}.md)" >> $@;      \
+                done;                                                           \
+		echo " · *$${DATE}*" >> $@;					\
 		echo >> $@;							\
 	done
 
@@ -108,18 +115,53 @@ gen-tags: tags.md $(patsubst %,tags/tag_%.md,$(TAGS))
 # BUILD HTML
 #################################################################################
 
-HTML=fragments/html.fragment
-NAV=fragments/nav.fragment
-HEADER=fragments/header.fragment
-FOOTER=fragments/footer.fragment
-BODY=fragments/body.fragment
-HTML_END=fragments/html-end.fragment
-
 define html_envelope
-	@TITLE="$(shell grep -oP '^title:\s*\K.*' $(1) 2>/dev/null) - $(SITE)" envsubst < $(HTML) > $@
+	@echo '<!DOCTYPE html>' > $@
+	@echo '<html lang="en">' >> $@
+	@echo '<head>' >> $@
+	@echo '<meta charset="utf-8">' >> $@
+	@echo '<meta name="viewport" content="width=device-width,initial-scale=1">' >> $@
+	@echo '<link rel="stylesheet" href="/style.css">' >> $@
+	@echo "<title>$(shell grep -oP '^title:\s*\K.*' $(1) 2>/dev/null) - $(SITE)</title>" >> $@
+	@echo '</head>' >> $@
+	@echo '<body>' >> $@
+	@test -z $(RAW) && $(nav) || true
+	test -n "$(HEADER)" && $(header) || true
 	@cat $2 | envsubst '$$PHONE' >> $@
-	@cat $(HTML_END) >> $@
+	@test -z $(RAW) && $(footer) || true
+	@echo '</body>' >> $@
+	@echo '</html>' >> $@
 	tidy --tidy-mark no -q -i -m $@
+endef
+
+define nav
+	echo '<nav>' >> $@ && \
+	echo '<a href="/">About</a> •' >> $@ && \
+	echo '<a href="/blog">Posts</a> •' >> $@ && \
+	echo '<a href="/notes">Notes</a> •' >> $@ && \
+	echo '<a href="/resume">Resume</a>' >> $@ && \
+	echo '</nav>' >> $@
+endef
+
+define footer
+	echo '<footer>' >> $@ && \
+	echo '<hr>' >> $@ && \
+	echo '<a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> |' >> $@ && \
+	echo 'This website was made using markdown,' >> $@ && \
+	echo '<a href="https://kristaps.bsd.lv/lowdown/">lowdown</a>, and <a href="https://www.gnu.org/software/make/">make</a>.' >> $@ && \
+	echo '</footer>' >> $@
+endef
+
+define header
+	echo '<div id="header">' >> $@ && \
+	echo '<div id="column">' >> $@ && \
+	echo '<h1 id="name">Dávid Jenei</h1>' >> $@ && \
+	echo 'Budapest, HU • <a href="mailto:info@davidjenei.com">info@davidjenei.com</a>' >> $@ && \
+	echo '</div>' >> $@ && \
+	echo '<div id="image">' >> $@ && \
+	echo '<img src="./profile.jpg" alt="profile" />' >> $@ && \
+	echo '</div>' >> $@ && \
+	echo '</div>' >> $@
 endef
 
 DOC_DIRS=docs/tags docs/notes docs/blog
@@ -127,23 +169,15 @@ DOC_DIRS=docs/tags docs/notes docs/blog
 $(DOC_DIRS):
 	mkdir -p $@
 
-docs/notes.html: docs/notes.pre docs/tags.pre docs/recent.pre
-	$(call html_envelope, notes.md, fragments/body-tags.fragment $(NAV) $^ $(FOOTER))
-
 docs/resume-%.html: docs/resume.pre fragments/resume-%.fragment
-	$(call html_envelope, resume.md, $(BODY) fragments/resume-$*.fragment docs/resume.pre)
+	$(call html_envelope, resume.md, fragments/resume-$*.fragment docs/resume.pre)
 
-$(INDEX): docs/index.pre $(HTML) $(NAV) $(HEADER) $(FOOTER) $(HTML_END)
-	$(call html_envelope, index.md, $(NAV) $(BODY) $(HEADER) $< $(FOOTER))
+$(INDEX): HEADER=yes
+$(RESUME): HEADER=yes
 
-$(RESUME): docs/resume.pre $(HTML) $(NAV) $(HEADER) $(FOOTER) $(HTML_END)
-	$(call html_envelope, resume.md, $(BODY) $(NAV) $(HEADER) $< $(FOOTER))
-
-docs/tags/%.html: docs/tags/%.pre $(HTML) $(NAV) $(FOOTER) $(HTML_END) | $(TAGS_DIR)
-	$(call html_envelope, tags/$*.md, fragments/body-tag.fragment $(NAV) $< $(FOOTER))
-
-docs/%.html: docs/%.pre $(HTML) $(NAV) $(FOOTER) $(HTML_END)
-	$(call html_envelope, $*.md, $(BODY) $(NAV) $< $(FOOTER))
+docs/notes.html: docs/notes.pre docs/tags.pre docs/recent.pre
+docs/%.html: docs/%.pre
+	$(call html_envelope, $*.md, $^ )
 
 #################################################################################
 # TASKS
