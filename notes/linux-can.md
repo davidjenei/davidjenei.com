@@ -16,6 +16,7 @@ Userspace
 
 -   [canutils] ofc
 -   [scapy] - good doc for understading protocol layers
+-   [collection of can bus packages and tools](https://gist.github.com/jackm/f33d6e3a023bfcc680ec3bfa7076e6960)
 
 Clear DTC, tested on C4:
 

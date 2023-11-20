@@ -1,3 +1,5 @@
+title: Build minimal container OS with Yocto for edge devices
+
 # Build minimal container OS with Yocto for edge devices
 
 Linux containers started to become more widespread in embedded systems

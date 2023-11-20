@@ -46,6 +46,10 @@ Some other benefits of TDD:
 -   do not add extra complexity just because we might need that one
     day - no test? delete code.
 
+Against TDD:
+
+-   TDD says the test first approach drives the software architecture. but usually it's the non-functional requirements that define the architecture and NFRs cannot be covered when writing unit tests.
+
 Perform tests on different levels: TDD != Unit tests
 
 ## What is a unit test?

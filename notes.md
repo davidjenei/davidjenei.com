@@ -3,7 +3,7 @@ title: Notes
 Notes { .notes }
 ================
 
-Welcome to my [digital notebook]! 🌱
+Welcome to my [digital notebook]! <span style="vertical-align: +0.1em">🌱</span>
 
 Here I share ideas, code snippets and links that I find useful. It's
 also a way for me to learn in public. Please keep in mind, that I write

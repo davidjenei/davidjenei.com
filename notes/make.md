@@ -1,6 +1,7 @@
 tags: #sw #build
 title: Make
-description: Building software
+maturity: 🌿
+description: Tools for building software
 
 Make
 ====
@@ -23,6 +24,17 @@ My C++ Makefile project
 TODO: publish it!
 
 TODO: Highlight some interesting parts
+
+Usecase
+-------
+
+80% declarative 20% procedural
+
+**Task automation**
+
+Use make to give your projects a [unified interface]
+
+**Build system**
 
 Response to Make critics
 ------------------------
@@ -125,6 +137,7 @@ Autotools
   [Make]: #make
   [Links]: #links
   [My C++ Makefile project]: #my-c-makefile-project
+  [Usecase]: #usecase
   [Response to Make critics]: #response-to-make-critics
   [Alternatives]: #alternatives
   [CMake]: #cmake
@@ -134,6 +147,7 @@ Autotools
   [Makefile Tutorial]: https://makefiletutorial.com/
   [GNU Make guidelines]: https://interrupt.memfault.com/blog/gnu-make-guidelines
   [BSD Makefile example]: https://github.com/kristapsdz/lowdown/blob/master/Makefile
+  [unified interface]: https://jakemccrary.com/blog/2016/11/30/unify-your-project-interfaces/
   [Or autogenerate this from comments]: https://jakemccrary.com/blog/2018/12/27/a-more-helpful-makefile/
   [Invoke]: https://interrupt.memfault.com/blog/building-a-cli-for-firmware-projects
   [examples]: https://github.com/memfault/memfault-firmware-sdk/blob/master/tasks/gdb.py

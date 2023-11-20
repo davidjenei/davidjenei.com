@@ -9,8 +9,6 @@ System and software modeling
 > · [Static models] · [Dynamic models] · [Embedded system modeling] ·
 > [Resources]
 
-> **Last updated:** [%date]
-
 The computing world is already so complex, that we interact with it
 through a great number of abstractions.
 

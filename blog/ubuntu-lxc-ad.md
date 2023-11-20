@@ -1,3 +1,5 @@
+title: Join Ubuntu 18.04 LXC container to Active Directory
+
 Join Ubuntu 18.04 LXC container to Active Directory
 ===================================================
 

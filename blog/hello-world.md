@@ -1,3 +1,6 @@
+title: Why I have a blog
+description: Welcome!
+
 Why I have a blog
 =================
 

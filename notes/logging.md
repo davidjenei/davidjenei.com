@@ -1,5 +1,6 @@
 title: Logging practices
 tags: #sw
+maturity: 🌻
 
 Logging practices
 =================

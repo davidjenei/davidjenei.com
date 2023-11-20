@@ -51,66 +51,59 @@ TAGS=$(shell grep -oPh '^tags:\s*\K.*' notes/*.md	 \
 tags:
 	@mkdir $@
 
+define print_metadata
+	TITLE=$$(grep -oP "^title: \K.*" $${file} || echo $${file}); 	\
+	DESC=$$(grep -oP "^description: \K.*" $${file});		\
+	MATURITY=$$(grep -oP "^maturity: \K.*" $${file});		\
+	TAGS=$$(grep -oP "^tags: \K.*" $${file});			\
+	WORDS=$$(cat $${file} | wc -w);					\
+	DATE=$$(stat --format="%y" $${file} | cut -d' ' -f1);		\
+	printf "* [%s](../$${file})\n"					\
+		"$$TITLE" >> $@;					\
+	echo >> $@; 							\
+	printf "\t *%s%s%s words · %s*"					\
+		"$$DESC$${DESC:+ · }"					\
+		"$${MATURITY:+$$MATURITY · }"				\
+		"$$WORDS" 						\
+		"$$DATE"						\
+		>> $@ ;							\
+	for _tag in $$TAGS; do                                          \
+	       TAG=$$(echo $${_tag} | tr -d '#');                       \
+	       echo -n " · [$${_tag}](../tags/tag_$${TAG}.md)" >> $@;	\
+	done;                                                           \
+	echo >> $@;							\
+	echo >> $@;
+endef
+
 tags/tag_%.md: $(NOTES) | tags
 	@echo "title: #$*" > $@
 	@echo >> $@
 	@echo "# Notes tagged with #$* { .tag }" >> $@
 	@echo >> $@
-	@for file in $$(grep -l "^tags:.*#$*\b" notes/*.md); do			\
-		TITLE=$$(grep -oP "^title: \K.*" $${file} || echo $${file});	\
-		DESC=$$(grep -oP "^description: \K.*" $${file});		\
-		MATURITY=$$(grep -oP "^maturity: \K.*" $${file});		\
-		WORDS=$$(cat $${file} | wc -w);					\
-		TAGS=$$(grep -oP "^tags: \K.*" $${file});			\
-		DATE=$$(stat --format="%y" $${file} | cut -d' ' -f1);		\
-		printf "* [%s](../$${file})\n"					\
-			"$$TITLE" >> $@;					\
-		echo >> $@; 							\
-		printf "\t *%s%s%s words · %s*"					\
-			"$$DESC$${DESC:+ · }"					\
-			"$${MATURITY:+$$MATURITY · }"				\
-			"$$WORDS" 						\
-			"$$DATE"						\
-			>> $@ ;							\
-		for _tag in $$TAGS; do                                          \
-                       TAG=$$(echo $${_tag} | tr -d '#');                       \
-                       echo " · [$${_tag}](../tags/tag_$${TAG}.md)" >> $@;	\
-                done;                                                           \
-		echo >> $@;							\
+	@for file in $$(grep -l "^tags:.*#$*\b" notes/*.md); do		\
+		$(print_metadata)					\
     	done
 
 tags.md: $(NOTES)
 	@echo "Building tags.md..."
 	@echo > $@
 	@$(foreach tag,$(TAGS), 	\
-		echo -n "* [$(tag)](tags/tag_$(tag).md)\t" >> $@; \
-		grep -o "^tags:.*#$(tag)\b" notes/*.md | wc -l >> $@; \
+		echo -n "* [$(tag)](tags/tag_$(tag).md)\t" >> $@; 	\
+		grep -o "^tags:.*#$(tag)\b" notes/*.md | wc -l >> $@; 	\
 	)
+
+POSTS=$(shell ls -tr blog/*md)
+blog-new.md: $(POSTS)
+	echo > $@
+	@for file in $(POSTS); do					\
+		$(print_metadata)		 			\
+	done
 
 recent.md: $(RECENT)
 	@echo "## Recent updates { .recent }" > $@
 	@echo >> $@
-	@for file in $(RECENT); do			\
-		TITLE=$$(grep -oP "^title: \K.*" $${file} || echo $${file});	\
-		DESC=$$(grep -oP "^description: \K.*" $${file});		\
-		TAGS=$$(grep -oP "^tags: \K.*" $${file});			\
-		WORDS=$$(cat $${file} | wc -w);					\
-		MATURITY=$$(grep -oP "^maturity: \K.*" $${file});		\
-		DATE=$$(stat --format="%y" $${file} | cut -d' ' -f1);		\
-		printf "* [%s](../$${file})\n"					\
-			"$$TITLE" >> $@;					\
-		echo >> $@; 							\
-		printf "\t *%s%s%s words*"					\
-			"$$DESC$${DESC:+ · }"					\
-			"$${MATURITY:+$$MATURITY · }"				\
-			"$$WORDS" 						\
-			>> $@ ;							\
-		for _tag in $$TAGS; do                                          \
-                       TAG=$$(echo $${_tag} | tr -d '#');                       \
-                       echo -n " · [$${_tag}](tags/tag_$${TAG}.md)" >> $@;      \
-                done;                                                           \
-		echo " · *$${DATE}*" >> $@;					\
-		echo >> $@;							\
+	@for file in $(RECENT); do					\
+		$(print_metadata)		 			\
 	done
 
 .PHONY:
@@ -146,10 +139,10 @@ HEAD_HTML = 									\
 
 NAV_HTML = 									\
 	<nav>									\
- 	  <a href="/">About</a> • 						\
-	  <a href="/blog">Posts</a> •						\
-	  <a href="/notes">Notes</a> •						\
-	  <a href="/resume">Resume</a>						\
+ 	  <a href="/index.html">About</a> • 					\
+	  <a href="/blog.html">Posts</a> •					\
+	  <a href="/notes.html">Notes</a> •					\
+	  <a href="/resume.html">Resume</a>					\
 	</nav>
 
 BODY_END_HTML =									\
@@ -179,6 +172,8 @@ BIO_HTML =									\
 	    <img src="./profile.jpg" alt="profile" />				\
 	  </div> 								\
 	</div>
+
+docs/blog.html: docs/blog.pre docs/blog-new.pre
 
 docs/%.html: docs/%.pre
 	$(call html_envelope, $*.md, $^ )

@@ -1,3 +1,6 @@
+title: Azure IoT Edge on Toradex modules
+description: Building guide
+
 Install Azure IoT Edge on Toradex modules
 =========================================
 

@@ -30,6 +30,10 @@ Tutorials
 -   In this article, we will be primarily dealing with
 -   first one of a set of blogposts targeting embedded systems hardening
 
+**Example**
+
+-   A minimal C++ class declaration might read...
+
 **Overview**
 
 In this tutorial you perform the following tasks:

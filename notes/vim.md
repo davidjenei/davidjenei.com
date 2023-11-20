@@ -100,6 +100,8 @@ Working with multiple files and windows
 
 Do some buffer magic here: `bn, bp, ls, bd`
 
+save layout: `:mksession` then start with `vim -S`
+
 Single repeats
 --------------
 
