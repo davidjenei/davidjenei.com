@@ -1,5 +1,6 @@
 title: Requirements engineering
 tags: #sw #requirement
+maturity: 🌿
 
 Requirements engineering
 ========================
@@ -8,8 +9,6 @@ Requirements engineering
 > [Elicitation] · [Glossary] · [Background information] · [What makes a
 > good requirement?] · [What are the types of requirements?] · [How
 > detailed?] · [Format]
-
-> **Last updated:** [%date]
 
 Definition
 ----------

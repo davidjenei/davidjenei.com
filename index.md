@@ -16,14 +16,20 @@ personal notes and links to pages I find interesting. Proud member of
 the [250kB club].
 
 Contact
--------
+-----
 
-* Email: [info@davidjenei.com]
-* PGP: [90347603]
+I do not have Twitter, LinkedIn or Instagram accounts and I'm not on any
+Mastodon instances. This is intentional, but it doesn't mean you
+shouldn't reach out to me about anything.
+
+The best way to keep in touch with me is via email.
+
+-   Email: [info@davidjenei.com]
+-   PGP: [90347603]
 
   [About]: #about
   [About this website]: #about-this-website
-  [Contact]: #contact
+  [Hello]: #hello
   [Budapest]: https://en.wikipedia.org/wiki/Budapest
   [simple]: http://www.catb.org/~esr/writings/taoup/html/ch01s07.html
   [Technology Radar]: ./radar.html

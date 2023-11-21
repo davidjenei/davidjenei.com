@@ -1,4 +1,3 @@
-
 * [Azure IoT Edge on Toradex modules](../blog/azure-iot-edge.md)
 
 	 *Building guide · 567 words · 2023-11-16*
