@@ -89,7 +89,7 @@ PRINT_METADATA = \
 PRINT_METADATA_SHORT = \
 	$(READ_METADATA)						\
 									\
-	printf "* [%s](../$${file}) · "					\
+	printf "* [%s](./$${file}) · "					\
 		"$${TITLE}" >> $@;					\
 									\
 	printf "*%s%s*"							\
