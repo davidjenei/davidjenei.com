@@ -69,11 +69,10 @@ READ_METADATA = \
 PRINT_METADATA = \
 	$(READ_METADATA)						\
 									\
-	printf "* [%s](../$${file})\n"					\
+	printf "[%s](../$${file})  "	                         	\
 		"$${TITLE}" >> $@;					\
-	echo >> $@; 							\
-									\
-	printf "\t *%s%s%s%s*"						\
+	echo >> $@;							\
+	printf "*%s%s%s%s*"						\
 		"$${DESC:+$$DESC · }"					\
 		"$${MATURITY:+$$MATURITY · }"				\
 		"$${WORDS:+$$WORDS words · }" 				\
@@ -86,6 +85,24 @@ PRINT_METADATA = \
 	done;                                                           \
 	echo >> $@;							\
 	echo >> $@;
+
+PRINT_METADATA_SHORT = \
+	$(READ_METADATA)						\
+									\
+	printf "* [%s](../$${file}) · "					\
+		"$${TITLE}" >> $@;					\
+									\
+	printf "*%s%s*"							\
+		"$${MATURITY:+$$MATURITY · }"				\
+		"$${WORDS:+$$WORDS words}" 				\
+		>> $@ ;							\
+									\
+	for _tag in $$TAGS; do                                          \
+	       TAG=$$(echo $${_tag} | tr -d '\#');                      \
+	       echo -n " · [$${_tag}](../tags/tag_$${TAG}.md)" >> $@;	\
+	done;                                                           \
+	echo >> $@;
+
 
 tags/tag_%.md: $(NOTES) | tags
 	@echo "title: #$*" > $@
@@ -104,6 +121,7 @@ tags.md: $(NOTES)
 	done
 
 posts.md: $(POSTS)
+	@echo > $@
 	@for file in $(POSTS); do					\
 		$(PRINT_METADATA)					\
 	done
@@ -112,7 +130,7 @@ recent.md: $(RECENT)
 	@echo "## Recent updates { .recent }" > $@
 	@echo >> $@
 	@for file in $(RECENT); do					\
-		$(PRINT_METADATA)					\
+		$(PRINT_METADATA_SHORT)					\
 	done
 
 .PHONY:
@@ -129,14 +147,14 @@ define html_envelope
 	@file="$(1)";		\
 	printf "$(HEAD_HTML)" `$(REL_PATH) $(STYLE)` "`$(GET_TITLE)`" > $@
 
-	@test -z $(RAW) && printf "$(NAV_HTML)" `$(REL_PATH) $(INDEX_HTML)`	\
+	@echo "$(PREPEND)" >> $@
+	@cat $2  >> $@
+	@test -z $(RAW) && printf "$(FOOTER_HTML)" `$(REL_PATH) $(INDEX_HTML)`	\
 						`$(REL_PATH) $(BLOG_HTML)`	\
 						`$(REL_PATH) $(NOTES_HTML)`	\
 						`$(REL_PATH) $(RESUME_HTML)`	\
 						>> $@ || true
-	@echo "$(PREPEND)" >> $@
-	@cat $2  >> $@
-	@test -z $(RAW) && echo "$(FOOTER_HTML)" >> $@ || true
+
 	@echo "$(BODY_END_HTML)" >> $@
 
 	@tidy --tidy-mark no -q -i -m $@
@@ -144,36 +162,45 @@ define html_envelope
 endef
 
 HEAD_HTML = 									\
-	<!DOCTYPE html> 							\
-	<html lang="en"> 							\
+	<!doctype html> 							\
+	<html lang="en" id="top"> 						\
 	<head> 									\
 	  <meta charset="utf-8">						\
 	  <meta name="viewport" content="width=device-width,initial-scale=1">	\
+	  <link rel="icon" href="data:,">					\
 	  <link rel="stylesheet" href="%s">		 			\
 	  <title>%s - $(SITE)</title> 						\
 	</head> 								\
-	<body>
-
-NAV_HTML = 									\
-	<nav>									\
- 	  <a href="%s">About</a> •	 					\
-	  <a href="%s">Posts</a> •						\
-	  <a href="%s">Notes</a> •						\
-	  <a href="%s">Resume</a>						\
-	</nav>
+	<body>									\
+	  <nav>									\
+	    <a href="\#menu">Menu &ShortDownArrow;</a>				\
+	</nav>									\
 
 BODY_END_HTML =									\
 	</body>									\
 	</html>
 
 FOOTER_HTML =									\
-	<footer>								\
-	<hr>									\
-  	  <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> | \
-	  This website was made using markdown,					\
-	  <a href="https://kristaps.bsd.lv/lowdown/">lowdown</a>		\
-	  and									\
-	  <a href="https://www.gnu.org/software/make/">make</a>.		\
+	<footer role="contentinfo">						\
+	  <hr> 									\
+	  <h3 id="menu">Navigation</h3>						\
+	    <ul>								\
+	      <li> <a href="%s">About</a> </li> 				\
+	      <li> <a href="%s">Posts</a> </li>					\
+	      <li> <a href="%s">Notes</a> </li>					\
+	      <li> <a href="%s">Resume</a> </li>				\
+	      <li> <a href="\#top">Back to top &uarr;</a>			\
+	    </ul>								\
+	  <small>								\
+  	    The content for this site is 					\
+	    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. \
+	    <br>								\
+	    Made with markdown,							\
+	    <a href="https://kristaps.bsd.lv/lowdown/">lowdown</a>		\
+	    and									\
+	    <a href="https://www.gnu.org/software/make/">make</a>.		\
+	    Inspired by <a href="https://git.sr.ht/~bt/barf">barf</a>.		\
+	  </small> 								\
 	</footer>
 
 BIO_HTML =									\
