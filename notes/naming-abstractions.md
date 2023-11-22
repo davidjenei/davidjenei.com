@@ -1,8 +1,15 @@
 title: Naming abstractions
 tags: #documentation
+description: Bad examples
+maturity: 🌱
+
+Naming abstractions
+==
+
+Words that I don't find particularly useful when I'm trying to understand program code.
 
 "Element"
-=========
+--
 
 I've seen a number of times programmers naming an abstractions an
 "element". Not as a postfix, they simply called their base abstraction
@@ -35,6 +42,11 @@ Another 'Element' example:
 > (see Pads and capabilities), you will learn more about data input and
 > output in elements, and how you can set that up in your application. -
 > [Gstreamer]
+
+"Base"
+---
+
+Base class? It probably should be composition instead of inheritance.
 
   ["Element"]: #element
   [Gstreamer]: https://gstreamer.freedesktop.org/documentation/application-development/basics/elements.html?gi-language=c

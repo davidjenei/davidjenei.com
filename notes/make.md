@@ -111,6 +111,19 @@ We can at least print the variables:
 We can organise code in separate files `MyModule.include` and have them
 included.
 
+Portable Makefiles?
+---
+
+Notable GnuMake features:
+
+* patsubst
+* pattern rules
+* define, call
+
+Portable syntaxes:
+
+* `!=`
+
 Alternatives
 ------------
 
