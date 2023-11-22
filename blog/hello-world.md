@@ -4,7 +4,7 @@ description: Welcome!
 Why I have a blog
 =================
 
-Welcome to my new blog.
+Welcome to my blog.
 
 [Schopenhauer says] when we read we effectively follow someone else's
 thought process. But if we stay in read-only mode we gradually lose our

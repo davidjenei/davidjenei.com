@@ -1,22 +1,7 @@
 ## Recent updates { .recent }
 
-* [AI alignment](../notes/ai-alignment.md)
-
-	 *Some links on AI alignment · 28 words · 2023-11-21* · [#ai](../tags/tag_ai.md)
-
-* [Requirements engineering](../notes/requirement.md)
-
-	 *🌿 · 522 words · 2023-11-20* · [#sw](../tags/tag_sw.md) · [#requirement](../tags/tag_requirement.md)
-
-* [Testing](../notes/testing.md)
-
-	 *Pipeline started - 38 minutes ago · 844 words · 2023-11-20* · [#sw](../tags/tag_sw.md) · [#testing](../tags/tag_testing.md)
-
-* [Colophon](../notes/colophon.md)
-
-	 *About this website · 🌱 · 270 words · 2023-11-20* · [#writing](../tags/tag_writing.md)
-
-* [CAN](../notes/linux-can.md)
-
-	 *CAN networking in Linux · 562 words · 2023-11-19* · [#linux](../tags/tag_linux.md) · [#automotive](../tags/tag_automotive.md)
-
+* [AI alignment](../notes/ai-alignment.md) · *32 words* · [#ai](../tags/tag_ai.md)
+* [Explaining Make](../notes/make-explain.md) · *🌱 · 51 words* · [#build](../tags/tag_build.md)
+* [Naming abstractions](../notes/naming-abstractions.md) · *🌱 · 329 words* · [#documentation](../tags/tag_documentation.md)
+* [Make](../notes/make.md) · *🌿 · 529 words* · [#sw](../tags/tag_sw.md) · [#build](../tags/tag_build.md)
+* [Parenting](../notes/parenting.md) · *34 words* · [#parenting](../tags/tag_parenting.md)

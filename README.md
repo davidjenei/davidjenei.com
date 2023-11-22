@@ -7,7 +7,7 @@ Uses:
 
 -   [lowdown] - A simple markdown translator
 -   [GNU make]
--   [~20 line css]
+-   [~20 line css] - Copied from the fantastic [barf](https://barf.bt.ht)
 -   no js
 
 and my notes written in markdown.
@@ -15,21 +15,19 @@ and my notes written in markdown.
 How it works
 ------------
 
-Uses `lowdown` to translate markdown documents to html. Then the
-remarkable `cat` command combines that with `html` fragments to build
+Uses `lowdown` to translate markdown documents to html. Then some
+remarkable unix utilities combine that with inline `html` fragments to build
 the pages.
 
 Collects #tags from markdown preambles.
 
-Helper targets will `rsync` results to my server or build customised
+Helper targets will help: `rsync` results to my server or build customised
 docs (resume).
 
 Missing features
 ----------------
 
 -   RSS: will do
--   navigation bar on top
--   links to tags
 -   generated pdf from resume: won't do, I'll use my favourite browser
 
 My workflow

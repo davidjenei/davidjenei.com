@@ -195,6 +195,9 @@ FOOTER_HTML =									\
   	    The content for this site is 					\
 	    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. \
 	    <br>								\
+	    The <a href="https://github.com/davidjenei/davidjenei.com">code for this site</a> is	\
+	    <a href="https://github.com/davidjenei/davidjenei.com/blob/main/LICENSE">MIT</a>. \
+	    <br>								\
 	    Made with markdown,							\
 	    <a href="https://kristaps.bsd.lv/lowdown/">lowdown</a>		\
 	    and									\

@@ -48,5 +48,10 @@ Another 'Element' example:
 
 Base class? It probably should be composition instead of inheritance.
 
+"Stub"
+--
+
+???
+
   ["Element"]: #element
   [Gstreamer]: https://gstreamer.freedesktop.org/documentation/application-development/basics/elements.html?gi-language=c

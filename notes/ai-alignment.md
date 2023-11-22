@@ -5,6 +5,8 @@ description: Some links on AI alignment
 AI alignment
 ===========
 
+Articles on AI alignment:
+
 -   [Faulty reward functions]
 -   [Goodhart's law]
 
