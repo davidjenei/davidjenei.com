@@ -3,9 +3,9 @@ body { background-color: #f9fafb; font-family: sans-serif; margin: 0 auto; max-w
 pre { padding: 1rem; background-color: #eee; overflow-x: auto}
 a { color: inherit; text-decoration: none; box-shadow: inset 0 -0.15rem 0 #bdb}
 blockquote { font-style: italic; margin: 1rem 1rem 0 1rem; padding-left: 1.5rem; border-left: 0.2rem solid #bdb; }
-img[alt=profile] { margin-top: 1rem; width: 7rem; border-radius: 50%; }
 h1.notes ~ ul:first-of-type { list-style-type: none; columns: 2; padding-left: 1.5rem;}
 h1.tag ~ p :not(a:first-child) { font-size: small }
-#header { display: flex; justify-content: space-between; flex-direction: column-reverse;}
-@media (min-width: 640px) { #header { flex-direction: row } h1.notes ~ ul:first-of-type {columns:3}}
-@media print { nav { display: none } footer { display: none } #header { flex-direction: row } html { font-size: 39.5% } body { background-color: transparent; line-height: 1.3; width: 100ch} li {margin-bottom: 0.2em } p { margin: 4px 0; } img[alt=profile] { width: 2.3cm }}
+#bio img { margin-top: 1rem; width: 7rem; border-radius: 50%; }
+#bio { display: flex; justify-content: space-between; flex-direction: column-reverse;}
+@media (min-width: 640px) { #bio { flex-direction: row } h1.notes ~ ul:first-of-type {columns:3}}
+@media print { nav { display: none } footer { display: none } #bio { flex-direction: row } html { font-size: 39.5% } body { background-color: transparent; line-height: 1.3; width: 100ch} li {margin-bottom: 0.2em } p { margin: 4px 0; } img[alt=profile] { width: 2.3cm }}

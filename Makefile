@@ -147,6 +147,7 @@ define html_envelope
 	@file="$(1)";		\
 	printf "$(HEAD_HTML)" `$(REL_PATH) $(STYLE)` "`$(GET_TITLE)`" > $@
 
+	@test -z $(RAW) && printf "$(NAV_HTML)" >> $@ || true
 	@echo "$(PREPEND)" >> $@
 	@cat $2  >> $@
 	@test -z $(RAW) && printf "$(FOOTER_HTML)" `$(REL_PATH) $(INDEX_HTML)`	\
@@ -171,9 +172,11 @@ HEAD_HTML = 									\
 	  <link rel="stylesheet" href="%s">		 			\
 	  <title>%s - $(SITE)</title> 						\
 	</head> 								\
-	<body>									\
-	  <nav>									\
-	    <a href="\#menu">Menu &ShortDownArrow;</a>				\
+	<body>
+
+NAV_HTML = 									\
+	<nav>									\
+	  <a href="\#menu">Menu &ShortDownArrow;</a>				\
 	</nav>									\
 
 BODY_END_HTML =									\
@@ -207,7 +210,7 @@ FOOTER_HTML =									\
 	</footer>
 
 BIO_HTML =									\
-	<div id="header">							\
+	<div id="bio">								\
 	  <div>				 					\
 	    <h1>Dávid Jenei</h1>			 		        \
 	    $(TITLE_HTML)							\
@@ -227,7 +230,6 @@ docs/%.html: docs/%.pre
 
 docs/notes.html: docs/notes.pre docs/tags.pre docs/recent.pre
 
-$(INDEX_HTML): PREPEND=$(BIO_HTML)
 $(RESUME_HTML): PREPEND=$(BIO_HTML)
 
 #################################################################################
