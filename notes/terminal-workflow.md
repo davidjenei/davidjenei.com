@@ -1,6 +1,7 @@
 title: Terminal workflow
 tags: #terminal #training
 description: Future training material for boosting terminal workflow
+maturity: 🌱
 
 Terminal workflow
 =================

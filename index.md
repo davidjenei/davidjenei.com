@@ -1,7 +1,7 @@
 title: About
 
 About
------
+===
 
 Hi there, I'm David from [Budapest]. By day I work with (embedded)
 software.
@@ -22,7 +22,7 @@ shouldn't reach out to me about anything.
 
 The best way to keep in touch with me is via email.
 
--   Email: [info@davidjenei.com]
+-   Email: info [at] davidjenei [dot] com
 -   PGP: [90347603]
 
   [About]: #about

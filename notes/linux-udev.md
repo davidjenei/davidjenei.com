@@ -1,4 +1,6 @@
+title: udev
 tags: #linux #kernel
+description: Trigger and rule
 
 udev
 ====

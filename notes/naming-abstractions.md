@@ -1,18 +1,18 @@
-title: Naming abstractions
+title: Naming software abstractions
 tags: #documentation
-description: Bad examples
+description: Bad practices
 maturity: 🌱
 
-Naming abstractions
+Naming software abstractions
 ==
 
-Words that I don't find particularly useful when I'm trying to understand program code.
+Words I don't find particularly useful when I'm trying to understand someone else's program code.
 
 "Element"
 --
 
-I've seen a number of times programmers naming an abstractions an
-"element". Not as a postfix, they simply called their base abstraction
+I've seen a number of times programmers naming their most fundamental abstractions an
+"element". Not as an extra postfix, they simply called their base abstraction
 an "element".
 
 To me this doesn't tell anything about this abstraction, other then that

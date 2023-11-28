@@ -184,7 +184,7 @@ BODY_END_HTML =									\
 	</html>
 
 FOOTER_HTML =									\
-	<footer role="contentinfo">						\
+	<footer>								\
 	  <hr> 									\
 	  <h3 id="menu">Navigation</h3>						\
 	    <ul>								\
@@ -196,7 +196,8 @@ FOOTER_HTML =									\
 	    </ul>								\
 	  <small>								\
   	    The content for this site is 					\
-	    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. \
+	    <a href=								\
+	     "http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. \
 	    <br>								\
 	    The <a href="https://github.com/davidjenei/davidjenei.com">code for this site</a> is	\
 	    <a href="https://github.com/davidjenei/davidjenei.com/blob/main/LICENSE">MIT</a>. \

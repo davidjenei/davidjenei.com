@@ -1,4 +1,6 @@
 tags: #embedded #imx
+title: i.MX board manufacturers
+description: Selecting i.MX SBC
 
 i.MX board manufactureres
 ==

@@ -1,4 +1,6 @@
 tags: #embedded #imx #cybersec
+title: i.MX security
+description: HAB
 
 i.MX security
 =============

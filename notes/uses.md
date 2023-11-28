@@ -9,7 +9,7 @@ Todos
 -----
 
 -   [ ] PSU: DPS5005 housing connectors
--   [ ] Air purifier: 3d print housing
+-   [ ] Air purifier: HEPA filter
 -   [ ] This [probe]
 -   [ ] Test hook clip for logic analyser
 

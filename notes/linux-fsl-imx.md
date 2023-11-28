@@ -1,4 +1,6 @@
 tags: #linux #imx
+title: i.MX kernel variants
+description: linux-fslc, linux-imx, linux-fslc-imx
 
 FSL community BSP
 =================

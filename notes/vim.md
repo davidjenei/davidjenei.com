@@ -1,6 +1,7 @@
 tags: #productivity #training
 description: Propaganda
 title: Vim
+maturity: 🌻
 
 Vim quick start
 ===============

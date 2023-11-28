@@ -1,4 +1,6 @@
 tags: #linux #kernel
+title: Kernel module
+description: Quick start
 
 Kernel module development notes
 ===============================

@@ -1,4 +1,6 @@
 tags: #linux #network #training
+title: Linux networking
+maturity: 🌱
 
 Linux networking
 ================
