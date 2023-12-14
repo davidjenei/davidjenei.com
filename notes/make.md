@@ -6,8 +6,8 @@ description: Tools for building software
 Make
 ====
 
-> **Go to:** [Links] · [My C++ Makefile project] · [Response to Make
-> critics] · [Alternatives] · [CMake] · [Autotools]
+> **Go to:** [Links] · [Usecase]· [Response to Make
+> criticism]  · [My C++ Makefile project] · [Alternatives] · [CMake] · [Autotools]
 
 Links
 -----
@@ -18,25 +18,54 @@ Links
 -   [GNU Make guidelines]
 -   [BSD Makefile example]
 
-My C++ Makefile project
------------------------
-
-TODO: publish it!
-
-TODO: Highlight some interesting parts
-
 Usecase
 -------
 
-80% declarative 20% procedural
-
-**Task automation**
-
-Use make to give your projects a [unified interface]
+What is a `Makefile?` It's a logic program that is both declarative and
+procedural. Usually 80% declarative 20% procedural. But why both? To understand
+this, we should look into the primary usecase for make: software compilation.
+Software compilation means running a series of instructions depending on what
+files have changed to produce other files. We can use declarative programming
+to specify what is effected by a file change, and use procedural programming to
+describe what needs to be done to create certain files.
 
 **Build system**
 
-Response to Make critics
+`make` is suitable for your project as a build system: if you don't need a meta build system.
+
+If you:
+
+* are building software for POSIX only.
+* need to build only a reasonable amount of artifacts
+* want to reduce complexity be introducing another complicated tool
+* when your build system doesn't need to execute hundreds of different commands to build your artifacts
+
+But avoid `make` if:
+
+* you want spaces in filenames
+
+**Task automation**
+
+In genaral `make` is probably suitable for you project as a task automation tool.
+Give your projects a [unified interface], save frequently used commands to
+execute repetitive tasks quickly.
+
+Good things:
+
+* available everywhere in POSIX
+* old
+* human friendly documentation
+* use any shell command easily
+* fine tune everything quickly
+
+Bad things:
+
+* `$$$$` hell
+* `.PHONY` is ugly
+* can be invoked recursively
+* mental model needs some practice: combining procedural and declarative is hard
+
+Response to Make criticism
 ------------------------
 
 **Make commands aren't documented**
@@ -85,7 +114,7 @@ To check if an executable is installed we can use something like this:
 > Want to make the CLI cross platform? You’ll need to handle differences
 > between Windows, Mac and Linux packages and their shell quirks.
 
-Ouch. This hits hard.
+That is correct.
 
 **Make is hard to debug**
 
@@ -110,6 +139,19 @@ We can at least print the variables:
 
 We can organise code in separate files `MyModule.include` and have them
 included.
+
+If your project is less complex then the Linux kernel, there is chance that you can handle it.
+
+My C++ Makefile project
+-----------------------
+
+Features:
+
+* set individual gcc args for objects - private variable
+* generate dep files - build object when header changed
+* build executable variants - target specific variable
+* linters, coverage, formatter, line count
+* help
 
 Portable Makefiles?
 ---
@@ -151,7 +193,7 @@ Autotools
   [Links]: #links
   [My C++ Makefile project]: #my-c-makefile-project
   [Usecase]: #usecase
-  [Response to Make critics]: #response-to-make-critics
+  [Response to Make criticism]: #response-to-make-criticism
   [Alternatives]: #alternatives
   [CMake]: #cmake
   [Autotools]: #autotools

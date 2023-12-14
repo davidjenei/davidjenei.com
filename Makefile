@@ -256,7 +256,7 @@ clean:
 
 .PHONY: publish
 publish: all
-	rsync -azh docs/ $(SITE):~/static
+	rsync -azh docs/ $(SITE):~/static/davidjenei.com
 
 .PHONY: help
 help:

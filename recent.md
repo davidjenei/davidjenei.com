@@ -1,7 +1,7 @@
 ## Recent updates { .recent }
 
-* [Network boot](./notes/linux-tftp.md) · *70 words* · [#linux](../tags/tag_linux.md)
-* [Uses](./notes/uses.md) · *283 words* · [#tech](../tags/tag_tech.md)
-* [Terminal workflow](./notes/terminal-workflow.md) · *🌱 · 49 words* · [#terminal](../tags/tag_terminal.md) · [#training](../tags/tag_training.md)
-* [Linux networking](./notes/linux-networking.md) · *🌱 · 321 words* · [#linux](../tags/tag_linux.md) · [#network](../tags/tag_network.md) · [#training](../tags/tag_training.md)
-* [Vim](./notes/vim.md) · *🌻 · 630 words* · [#productivity](../tags/tag_productivity.md) · [#training](../tags/tag_training.md)
+* [Make](./notes/make.md) · *🌿 · 799 words* · [#sw](../tags/tag_sw.md) · [#build](../tags/tag_build.md)
+* [Terminal workflow](./notes/terminal-workflow.md) · *🌱 · 85 words* · [#terminal](../tags/tag_terminal.md) · [#training](../tags/tag_training.md)
+* [notes/electrician.md](./notes/electrician.md) · *94 words* · [#home](../tags/tag_home.md)
+* [i.MX board manufacturers](./notes/linux-imx-boards.md) · *140 words* · [#embedded](../tags/tag_embedded.md) · [#imx](../tags/tag_imx.md)
+* [i.MX security](./notes/linux-imx-security.md) · *366 words* · [#embedded](../tags/tag_embedded.md) · [#imx](../tags/tag_imx.md) · [#cybersec](../tags/tag_cybersec.md)
