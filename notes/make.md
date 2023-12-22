@@ -22,7 +22,7 @@ Usecase
 -------
 
 What is a `Makefile?` It's a logic program that is both declarative and
-procedural. Usually 80% declarative 20% procedural. But why both? To understand
+procedural. Usually 80% declarative and 20% procedural. But why both? To understand
 this, we should look into the primary usecase for make: software compilation.
 Software compilation means running a series of instructions depending on what
 files have changed to produce other files. We can use declarative programming
@@ -37,7 +37,7 @@ If you:
 
 * are building software for POSIX only.
 * need to build only a reasonable amount of artifacts
-* want to reduce complexity be introducing another complicated tool
+* want to reduce complexity without introducing another complicated tool
 * when your build system doesn't need to execute hundreds of different commands to build your artifacts
 
 But avoid `make` if:
@@ -64,6 +64,14 @@ Bad things:
 * `.PHONY` is ugly
 * can be invoked recursively
 * mental model needs some practice: combining procedural and declarative is hard
+
+Is this the right tool the job?
+---
+
+First we have to define a scope to work in. If the problem requires deep understanding of the assembly code,
+we need to have deep understanding of the compilers. If all your interaction with the OS can be solved with the help of cmake modules and you don't care about what happens in the background that is also a valid problem scope.
+
+Make is suitable your task if you want to solve it with multiple tools following the UNIX philosophy.
 
 Response to Make criticism
 ------------------------
