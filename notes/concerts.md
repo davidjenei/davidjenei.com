@@ -1,4 +1,5 @@
 tags: #fun
+title: Concerts I've attended and liked
 
 # 🎶 Concerts I've attended and liked
 
@@ -16,7 +17,7 @@ tags: #fun
 ## 2023
 
 * Plini - Budapest
-* Jakub Zytecki - Budapest
+* **Jakub Zytecki** - Budapest Turbina
 * Jakub Zytecki 11.04 - Budapest
 
 ## 2022

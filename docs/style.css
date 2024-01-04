@@ -1,6 +1,7 @@
 * { box-sizing: border-box; }
 body { background-color: #f9fafb; font-family: sans-serif; margin: 0 auto; max-width: 650px; padding: 1rem; width: 100%; line-height: 1.5}
-pre { padding: 1rem; background-color: #eee; overflow-x: auto}
+pre { padding: 1rem; background-color: #eee; overflow-x: auto; }
+code { font-size: 120%; }
 a { color: inherit; text-decoration: none; box-shadow: inset 0 -0.15rem 0 #bdb}
 blockquote { font-style: italic; margin: 1rem 1rem 0 1rem; padding-left: 1.5rem; border-left: 0.2rem solid #bdb; }
 h1.notes ~ ul:first-of-type { list-style-type: none; columns: 2; padding-left: 1.5rem;}

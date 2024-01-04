@@ -52,7 +52,8 @@ TAGS != grep -oPh '^tags:\s*\K.*' notes/*.md	 	\
         | tr ' ' '\n'					\
         | sort -u
 
-tags:
+
+tagsdir:
 	@mkdir $@
 
 # Use variables instead of command substitution, because parameter expansion
@@ -103,15 +104,21 @@ PRINT_METADATA_SHORT = \
 	done;                                                           \
 	echo >> $@;
 
-
-tags/tag_%.md: $(NOTES) | tags
+tags/tag_%.md: | tagsdir
 	@echo "title: #$*" > $@
 	@echo >> $@
 	@echo "# Notes tagged with #$* { .tag }" >> $@
 	@echo >> $@
+	@printf "tags/tag_$*.md: " > deps/tags/tag_$*.d
 	@for file in $$(grep -l "^tags:.*#$*\b" notes/*.md); do		\
 		$(PRINT_METADATA)					\
+		printf "$${file} " >> deps/tags/tag_$*.d;		\
     	done
+
+TAG_LIST=$(wildcard tags/*.md)
+TAG_DEPS=$(TAG_LIST:%.md=deps/%.d)
+
+-include $(TAG_DEPS)
 
 tags.md: $(NOTES)
 	@echo > $@
@@ -256,6 +263,11 @@ clean:
 
 .PHONY: publish
 publish: all
+	rsync -azh docs/ ~/static/davidjenei.com
+
+
+.PHONY: publish-remote
+publish-remote: all
 	rsync -azh docs/ $(SITE):~/static/davidjenei.com
 
 .PHONY: help

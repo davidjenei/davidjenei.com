@@ -65,7 +65,7 @@ Bad things:
 * can be invoked recursively
 * mental model needs some practice: combining procedural and declarative is hard
 
-Is this the right tool the job?
+When should I use `make`?
 ---
 
 First we have to define a scope to work in. If the problem requires deep understanding of the assembly code,
@@ -177,22 +177,17 @@ Portable syntaxes:
 Alternatives
 ------------
 
-**As a task runner or project CLI**
+- As a **task runner** or project CLI: [Invoke] with [examples]
+- As a **build system** for cross platform targets:  CMake, Meson
 
-[Invoke] with [examples]
-
-**As a build system for cross platform targets**
-
-CMake, Meson
-
-CMake
+Notes on CMake
 -----
 
 Is CMake really the "cpp standard"? Check out the [Rise of Meson].
 
 [Introduction to modern CMake]
 
-Autotools
+Notes on Autotools
 ---------
 
 [Autotools.info]

@@ -1,7 +1,7 @@
 ## Recent updates { .recent }
 
-* [Make](./notes/make.md) · *🌿 · 799 words* · [#sw](../tags/tag_sw.md) · [#build](../tags/tag_build.md)
+* [Lamington](./notes/recipe-lamington.md) · *110 words* · [#recipe](../tags/tag_recipe.md)
+* [Concerts I've attended and liked](./notes/concerts.md) · *187 words* · [#fun](../tags/tag_fun.md)
+* [Cozy things](./notes/comfy.md) · *🌱 · 26 words* · [#home](../tags/tag_home.md)
+* [Make](./notes/make.md) · *🌿 · 892 words* · [#sw](../tags/tag_sw.md) · [#build](../tags/tag_build.md)
 * [Terminal workflow](./notes/terminal-workflow.md) · *🌱 · 85 words* · [#terminal](../tags/tag_terminal.md) · [#training](../tags/tag_training.md)
-* [notes/electrician.md](./notes/electrician.md) · *94 words* · [#home](../tags/tag_home.md)
-* [i.MX board manufacturers](./notes/linux-imx-boards.md) · *140 words* · [#embedded](../tags/tag_embedded.md) · [#imx](../tags/tag_imx.md)
-* [i.MX security](./notes/linux-imx-security.md) · *366 words* · [#embedded](../tags/tag_embedded.md) · [#imx](../tags/tag_imx.md) · [#cybersec](../tags/tag_cybersec.md)
