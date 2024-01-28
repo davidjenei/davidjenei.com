@@ -25,6 +25,11 @@ A mázhoz:
 * 3 ek kakaopor
 * 8 ek tej
 * 0.5 dl rum
+
+x1.2 , x1.3
+
+Frogatni:
+
 * 150-200g kokuszreszelek
 
 ## Method

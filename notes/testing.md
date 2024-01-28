@@ -1,29 +1,31 @@
 tags: #sw #testing
 title: Testing
 description: Pipeline started - 38 minutes ago
+maturity: 🌿
 
 # Testing
 
 ## Terminology
 
-What are acceptance tests, integration tests and component tests? Before
-discussing test strategy, make sure to have common understanding of
-these phrases.
+Acceptance tests, integration tests, component tests. Developers discuss test
+strategy with the help of these phrases but sometimes the definitions remain
+unclear.  Before specifying eg. a component test, we should first figure out
+what exactly we mean by a component. This applies to other test levels too:
+to avoid misunderstandings, first specify the context and the boundaries of the
+system component we plan to test.
 
-To discuss what is covered by eg. a component test, we need to define
-what a component is. So first specify system or component context and
-boundaries.
+## Test strategy
 
-Then we can organise tests based on:
+With the system architecture in mind, we can organise tests based on:
 
--   integration level
--   importance (the test case is this an acceptance criteria or covers
-    an [ASR]?
+-   integration level - unit >> component >> subsystem >> system
+-   importance - covers acceptance criteria >> covers
+    an [ASR] >> covers NF requirement
 
 ## Test-driven development
 
 TDD is successful because people started writing regression tests not
-because X% coverage results in good code.
+because X% test coverage results in good code.
 
 > TDD is a discipline for programmers - [Robert C Martin]
 
@@ -61,6 +63,11 @@ Perform tests on different levels: TDD != Unit tests
 
 It's not a problem if the test covers more than one "unit". But it needs
 to run fast.
+
+It's a unit when:
+
+- it's a cohesive chunk of work
+- you can easily test it, because it has minimal coupling to other pieces
 
 > A test is not a unit test if:
 >

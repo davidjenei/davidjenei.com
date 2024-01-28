@@ -1,12 +1,12 @@
 tags: #sw #build
 title: Make
-maturity: 🌿
+maturity: 🌻
 description: Tools for building software
 
 Make
 ====
 
-> **Go to:** [Links] · [Usecase]· [Response to Make
+> **Go to:** [Links] · [Usecase] · [Response to Make
 > criticism]  · [My C++ Makefile project] · [Alternatives] · [CMake] · [Autotools]
 
 Links
@@ -21,13 +21,29 @@ Links
 Usecase
 -------
 
-What is a `Makefile?` It's a logic program that is both declarative and
-procedural. Usually 80% declarative and 20% procedural. But why both? To understand
-this, we should look into the primary usecase for make: software compilation.
-Software compilation means running a series of instructions depending on what
-files have changed to produce other files. We can use declarative programming
-to specify what is effected by a file change, and use procedural programming to
-describe what needs to be done to create certain files.
+> GNU Make is a tool which controls the generation of executables and other
+> non-source files of a program from the program's source files.
+
+A `Makefile` is the input file for programs called `make`. It's a logic program
+that is both declarative and procedural.
+
+But why both? To understand this, we should look into the primary usecase for make:
+software compilation. Software compilation usually means running a series of
+instructions depending on what files have changed to produce other files. The
+goal is to make software compilation efficient during development: we don't
+want to recompile parts of the program that is unchanged.
+
+We can use declarative programming to specify what is effected by a file
+change, and use procedural programming to describe what needs to be done to
+create certain files.
+
+> Sometimes we cannot declare this dependency upfront, because this relation
+> may depend on the content of the file. As an example object files may not
+> only depend on `.c` files but on header files too. `gcc -MMD` can help us by
+> generating dependency files (`.d`) that we can include in the Makefile. This
+> approach can be useful even if don't have a ready-made tool to generate the
+> dependency files: we can generate this by ourselves too. Example: category
+> pages for my notebook
 
 **Build system**
 

@@ -7,6 +7,8 @@ Sequences
 Tuple
 -----
 
+The immutable sequence. Primary usecases:
+
 A record:
 
     >>> name, age, _ = ('Alice', 30, 'Software engineer')
@@ -15,7 +17,7 @@ A record:
     >>> age
     30
 
-An immutable list:
+A list that never changes:
 
     >>> suits = ('diamonds', 'clubs', 'hearts', 'spades')
     >>> suits.
@@ -25,10 +27,11 @@ But it's not transitive, references might point to mutable objects.
 
 **Named tuple**
 
-Tuple factory function.
+Tuple factory function. Create tuples that look like a dict: look up members
+using their names instead of indexes. When unpacking a record, we may mix up
+the order.
 
-<https://miguendes.me/everything-you-need-to-know-about-pythons-namedtuples>
-
+Read more about [named tuples](https://miguendes.me/everything-you-need-to-know-about-pythons-namedtuples)
 
 Unpacking iterables
 -------------------

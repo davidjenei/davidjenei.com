@@ -14,9 +14,18 @@ RESUME_PUBLIC=docs/resume-public.html
 HTMLS=$(INDEX_HTML) $(RESUME_HTML) $(RESUME_PRIVATE) $(RESUME_PUBLIC) \
 	$(BLOG_HTML) docs/radar.html docs/notes.html docs/tags.html
 
-POST_HTMLS=$(patsubst blog/%.md,docs/blog/%.html,$(wildcard blog/*.md))
-NOTES_HTMLS=$(patsubst notes/%.md,docs/notes/%.html,$(wildcard notes/*.md))
-TAG_HTMLS=$(patsubst tags/%.md,docs/tags/%.html,$(wildcard tags/*.md))
+POSTS != ls -t blog/*md
+POST_HTMLS=$(POSTS:blog/%.md=docs/blog/%.html)
+
+NOTES != ls notes/*.md
+NOTES_HTMLS=$(NOTES:notes/%.md=docs/notes/%.html)
+
+TAGS != grep -oPh '^tags:\s*\K.*' notes/*.md	 	\
+        | tr -d '\#'				 	\
+        | tr ' ' '\n'					\
+        | sort -u
+
+TAG_HTMLS=$(TAGS:%=docs/tags/tag_%.html)
 
 DOC_DIRS=docs/tags docs/notes docs/blog
 STYLE=docs/style.css
@@ -44,17 +53,10 @@ docs/%.pre: %.md | $(DOC_DIRS)
 # BUILD TAGS
 #################################################################################
 
-POSTS != ls -t blog/*md
-NOTES != ls notes/*.md
 RECENT != ls -t notes/*md | head -n 5
-TAGS != grep -oPh '^tags:\s*\K.*' notes/*.md	 	\
-        | tr -d '\#'				 	\
-        | tr ' ' '\n'					\
-        | sort -u
-
 
 tagsdir:
-	@mkdir $@
+	@mkdir tags
 
 # Use variables instead of command substitution, because parameter expansion
 # gives more readable code when dealing with missing metadata
